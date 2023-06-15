@@ -1,3 +1,9 @@
+import Link from "next/link";
+import { useEffect } from "react";
+import { useAnimation, motion, AnimatePresence } from "framer-motion";
+import { useInView } from "react-intersection-observer";
+import { MIX_SERVICES } from "../../data/services";
+
 export interface ServiceImageProps {
   img: string;
   name: string;
