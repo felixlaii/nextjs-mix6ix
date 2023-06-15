@@ -293,6 +293,117 @@ const DesktopNavBar: React.FC<
   );
 };
 
-export const Header: React.FC = () => {
-  return <div></div>;
+const Header: React.FC<HeaderProps> = ({
+  navigationLinks,
+  companyName,
+  companyNameClassName,
+  linkClassName,
+  hoverClassName,
+  activeLinkClassName,
+  currentActiveLocation,
+  dropdownBgColor,
+  arrowColor,
+  textClassName,
+  logo,
+  logoClassName,
+  alt,
+}) => {
+  const [isClick, setIsClick] = useState<boolean>(false);
+  const ref = useRef(null);
+  useOnClickOutside(ref, () => {
+    setIsClick(false);
+  });
+
+  return (
+    <header className="fixed flex justify-between xl:justify-evenly w-screen items-center bg-black z-40 pb-2 md:pb-2 md:pl-4">
+      <div className="m-0">
+        {logo ? (
+          <LogoLink logo={logo} alt={alt} logoClassName={logoClassName} />
+        ) : (
+          <Link href="/">
+            <div className={clsx(companyNameClassName, "")}>{companyName}</div>
+          </Link>
+        )}
+      </div>
+      <div className="flex">
+        <div className="hidden sm:flex lg:hidden mt-1">
+          <Button
+            extraClassName={clsx(
+              "bg-brand-base px-8 text-sm h-10 mt-1 text-white hover:text-brand-base hover:shadow-[inset_15rem_0_0_0] hover:shadow-white duration-[400ms] transition-[color,box-shadow] rounded-lg border-2 border-brand-base"
+            )}
+            type="button"
+          >
+            <Link href="/book-appointment" className="font-medium">
+              BOOK NOW
+            </Link>
+          </Button>
+        </div>
+        <Popover className="lg:hidden">
+          {({ open, close }: { close: () => void; open: boolean }) => (
+            <>
+              <Popover.Button
+                className={clsx(
+                  "flex px-6 mt-2",
+                  "focus:outline-none focus:ring-1 focus-ring-inset focus:ring-black-100"
+                )}
+              >
+                <span className="sr-only">'open-navigation-menu'</span>
+                <HamburgerIcon />
+              </Popover.Button>
+              <Transition
+                as={Fragment}
+                enter="transition ease-out duration-200"
+                enterFrom="opacity-0 translate-y-1"
+                enterTo="opacity-100 translate-y-0"
+                leave="transition ease-in duration-150"
+                leaveFrom="opacity-100 translate-y-0"
+                leaveTo="opacity-0 translate-y-1"
+              >
+                <Popover.Panel className="absolute left-1/2 z-50 mt-10 w-screen -translate-x-1/2 transform px-4 sm:px-0 lg:max-w-3xl bg-black border-y-[2px] shadow-xl">
+                  {({ close }: { close: () => void; open: boolean }) => (
+                    <div>
+                      <MenuLinks
+                        navigationLinks={navigationLinks}
+                        linkClassName={linkClassName}
+                        hoverClassName={hoverClassName}
+                        activeLinkClassName={activeLinkClassName}
+                        currentActiveLocation={currentActiveLocation}
+                        onLinkClick={() => close()}
+                      />
+                    </div>
+                  )}
+                </Popover.Panel>
+              </Transition>
+            </>
+          )}
+        </Popover>
+      </div>
+      <div className="hidden lg:inline-flex mt-3">
+        <DesktopNavBar
+          navigationLinks={navigationLinks}
+          textClassName={textClassName}
+          dropdownBgColor={dropdownBgColor}
+          arrowColor={arrowColor}
+          linkClassName={linkClassName}
+          hoverClassName={hoverClassName}
+          activeLinkClassName={activeLinkClassName}
+          currentActiveLocation={currentActiveLocation}
+        />
+      </div>
+      <div className="hidden lg:flex">
+        <Button
+          extraClassName={clsx(
+            "bg-brand-base px-8 text-sm h-12 mt-1 mr-2 text-white hover:text-brand-base hover:shadow-[inset_15rem_0_0_0] hover:shadow-white duration-[400ms] transition-[color,box-shadow] rounded-lg border-2 border-brand-base"
+          )}
+          type="button"
+        >
+          <Link href="/book-appointment" className="font-medium">
+            BOOK NOW
+          </Link>
+        </Button>
+      </div>
+    </header>
+  );
 };
+
+export default Header;
