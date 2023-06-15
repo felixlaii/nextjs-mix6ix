@@ -6,7 +6,7 @@ import { Popover, Transition } from "@headlessui/react";
 import { ChevronUpIcon } from "@heroicons/react/24/outline";
 import HamburgerIcon from "@/components/ui/icons/HamburgerIcon";
 import Button from "@/components/ui/inputs/Button";
-
+import Logo from "../../Logo";
 export function useOnClickOutside<T extends HTMLDivElement>(
   ref: React.RefObject<T>,
   handler: (e: any) => void
@@ -49,7 +49,9 @@ const LogoLink: React.FC<
           logoClassName
         )}
         onClick={onLinkClick}
-      ></Link>
+      >
+        <Logo />
+      </Link>
     </div>
   );
 };
