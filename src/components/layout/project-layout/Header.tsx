@@ -50,6 +50,32 @@ const LogoLink: React.FC<
   );
 };
 
+const slideVerticalAnimation = {
+  open: {
+    rotateX: 0,
+    y: 0,
+    opacity: 1,
+    height: "auto",
+    transition: {
+      duration: 0.3,
+      mass: 0.8,
+      type: "spring",
+    },
+    display: "block",
+  },
+  close: {
+    rotateX: -15,
+    y: -320,
+    opacity: 0,
+    transition: {
+      duration: 0.3,
+    },
+    transitionEnd: {
+      display: "none",
+    },
+  },
+};
+
 export const Header: React.FC = () => {
   return <div></div>;
 };
