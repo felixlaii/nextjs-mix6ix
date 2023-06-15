@@ -2,11 +2,16 @@ const AboutUs: React.FC = () => {
   return (
     <div className="w-[calc(10% - 10px)] mx-8 flex flex-col gap-y-10 xl:mx-0 xl:w-screen">
       <div className="mt-56">
-        <div className="flex h-1/2 w-1/2">
+        <div className="flex w-screen">
           <div>
-            <img src="./images/mix-logo-blk.png" alt="blk logo" />
+            <img
+              className="h-1/2 ml-10 opacity-75"
+              src="./images/citytv.JPG"
+              alt="blk logo"
+            />
           </div>
-          <div>
+          <div className="mr-10">
+            <h1 className="text-2xl font-bold">About Us</h1>
             <p>
               A team of passionate, energetic, and experienced hospitality
               professionals who specialize in creating the most memorable
