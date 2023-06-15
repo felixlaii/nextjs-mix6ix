@@ -3,6 +3,7 @@ import { Content } from "./project-layout/Content";
 import Footer from "./project-layout/Footer";
 import { Header } from "./project-layout/Header";
 import { Wrapper } from "./project-layout/Wrapper";
+import { useRouter } from "next/router";
 
 /**
  * Responsive web UI layout for RheumInfo.
