@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useAnimation, motion, AnimatePresence } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { MIX_SERVICES } from "../../data/services";
@@ -49,53 +49,49 @@ const ServiceDiv = ({ img, name, service, description }: ServiceImageProps) => {
 };
 
 export const ServiceLinks: React.FC<ServiceLinkArr> = ({ links }) => {
+  const [hoveredIndex, setHoveredIndex] = useState(-1);
   return (
-    <ul>
-      {links.map((link) => (
+    <ul className="flex flex-wrap md:px-12 overflow-y-hidden xl:w-screen md:justify-center xl:gap-12 relative z-10">
+      {links.map((link, index) => (
         <li
           key={link.service}
-          className="flex w-1/2 md:w-1/5 justify-center xl:w-fit md:hover:scale-110 md:ease-in-out md:duration-200 md:pt-12 mx-auto md:mx-0"
+          className="flex w-1/2 md:w-1/5 justify-center xl:w-fit md:hover:scale-110 md:ease-in-out md:duration-200 md:pt-12 mx-auto md:mx-0 relative"
+          onMouseEnter={() => setHoveredIndex(index)}
+          onMouseLeave={() => setHoveredIndex(-1)}
         >
           <motion.div
-            className="box"
+            className="box relative"
             whileHover={{ scale: 1.1 }}
             transition={{ type: "spring", stiffness: 400, damping: 10 }}
           >
-            <Link href={link.href}>
-              <img
-                src={link.img}
-                alt={link.service}
-                className="rounded-full z-10 h-24 w-24 mx-auto object-cover hover:img-hover mt-3"
-              />
-              <p className="font-extralight text-sm text-center py-4 xl:text-lg">
-                {link.service}
-              </p>
-            </Link>
+            {hoveredIndex === index ? (
+              <motion.p
+                className="font-extralight text-sm text-center py-4 xl:text-lg description"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.2 }}
+              >
+                {link.description}
+              </motion.p>
+            ) : (
+              <>
+                <div className="text-white absolute inset-0 flex items-center justify-center">
+                  <p className="font-bold text-xl text-center py-4 xl:text-lg">
+                    {link.service}
+                  </p>
+                </div>
+                <Link href={link.href}>
+                  <img
+                    src={link.img}
+                    alt={link.service}
+                    className="z-10 h-41 w-41 mx-auto object-cover hover:img-hover mt-3 aspect-w-1 aspect-h-1"
+                  />
+                </Link>
+              </>
+            )}
           </motion.div>
         </li>
       ))}
-    </ul>
-  );
-};
-
-export const ServiceList: React.FC<ServiceLinkArr> = ({ links }) => {
-  return (
-    <ul>
-      {links.map((service, i) => {
-        return (
-          <li key={service.service} id={service.id} className="pb-12 xl:pb-0">
-            <AnimatePresence>
-              <ServiceDiv
-                img={service.img}
-                name={service.service}
-                //   evenOrUneven={i % 2 === 0}
-                service={service.service}
-                description={service.description}
-              />
-            </AnimatePresence>
-          </li>
-        );
-      })}
     </ul>
   );
 };
@@ -121,9 +117,9 @@ const Services: React.FC = () => {
       <div className="mb-12">
         <ServiceLinks links={MIX_SERVICES} />
       </div>
-      <div className="mt-24">
+      {/* <div className="mt-24">
         <ServiceList links={MIX_SERVICES} />
-      </div>
+      </div> */}
     </div>
   );
 };
