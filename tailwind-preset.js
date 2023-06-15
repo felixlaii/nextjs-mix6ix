@@ -19,12 +19,12 @@ module.exports = {
       colors: {
         current: "currentColor",
         brand: {
-          evenLighter: "#fcf7f8",
+          evenLighter: "#ABA8A6",
+          lighter: "#4A4846",
+          base: "#1A1918",
+          dark: "#292827",
+          darkest: "#000000",
           gold: "#AA8548",
-          lighter: "#738290",
-          base: "#42484D",
-          dark: "#2C2E2F",
-          darkest: "#272727",
         },
         ui: {
           error: red[700],
