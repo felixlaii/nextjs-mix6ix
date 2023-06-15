@@ -53,8 +53,32 @@ module.exports = {
   plugins: [
     // popular tailwind plugins
     require("@tailwindcss/typography"),
-    require("@tailwindcss/forms"),
     require("@tailwindcss/aspect-ratio"),
     require("@tailwindcss/line-clamp"),
+
+    plugin(function ({ addBase }) {
+      addBase({
+        // definition of css variables for colors
+        ":root": {
+          "--color-primary": "#315182",
+          // '--color-secondary': '#00ff00',
+          "--color-background": "#ecf3f8",
+          "--color-copy": "rgba(0, 0, 0, 0.9)",
+        },
+        // always show scrollbar (on Windows this avoids horizontal jank during loading or transitions)
+        body: {
+          overflowY: "scroll",
+        },
+        // remove spinner displayed on number inputs on chrome/safari/edge/opera
+        "input::-webkit-outer-spin-button, input::-webkit-inner-spin-button": {
+          "-webkit-appearance": "none",
+          margin: "0",
+        },
+        // remove spinner displayed on number inputs on firefox
+        'input[type="number"]': {
+          "-moz-appearance": "textfield",
+        },
+      });
+    }),
   ],
 };
