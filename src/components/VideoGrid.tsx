@@ -19,6 +19,7 @@ const VideoGrid: React.FC = () => {
                 id={i.toString()}
                 src={media}
                 className="rounded-full object-cover opacity-80 z-10 h-12 w-12 md:h-16 md:w-16 lg:h-24 lg:w-24"
+                preload="auto"
                 controls
               />
             </a>
