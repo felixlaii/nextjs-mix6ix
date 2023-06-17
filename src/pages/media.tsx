@@ -1,6 +1,7 @@
 import clsx from "clsx";
-import { createRef, useState, useEffect, useMemo, useRef } from "react";
+import { useState, useEffect, useRef } from "react";
 import VideoGrid from "@/components/VideoGrid";
+import PageHeading from "@/components/ui/PageHeading";
 
 export const media = [
   "https://res.cloudinary.com/dyjj9jfc2/video/upload/v1687033460/mix_6ix_genesis_ho7bbz.mp4",
@@ -92,7 +93,9 @@ const Media: React.FC = () => {
         "flex flex-col justify-center items-center w-[calc(10% - 10px)] mx-5 lg:mx-auto pb-8"
       )}
     >
-      <div className="relative pt-10 sm:pt-0 h-[14rem] md:h-[18rem]"></div>
+      <div className="relative pt-10 sm:pt-0 h-[14rem] md:h-[18rem]">
+        <PageHeading title="Video Gallery" />
+      </div>
       <div className={clsx("relative mt-12", videoClassName)}>
         <div
           className={clsx(

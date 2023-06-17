@@ -1,6 +1,7 @@
 import ImageGrid from "@/components/ImageGrid";
 import clsx from "clsx";
 import { createRef, useState } from "react";
+import PageHeading from "@/components/ui/PageHeading";
 
 export const images = [
   "https://res.cloudinary.com/dyjj9jfc2/image/upload/v1687031907/drinks-image-09_rtjuiq.jpg",
@@ -81,7 +82,9 @@ const Photos: React.FC = () => {
         "flex flex-col justify-center items-center w-[calc(10% - 10px)] mx-5 lg:mx-auto pb-8"
       )}
     >
-      <div className="relative pt-10 sm:pt-0 h-[14rem] md:h-[18rem]"></div>
+      <div className="relative pt-10 sm:pt-0 h-[14rem] md:h-[18rem]">
+        <PageHeading title="Photo Gallery" />
+      </div>
       <div className={clsx("relative mt-12", photoClassName)}>
         <div
           className={clsx(

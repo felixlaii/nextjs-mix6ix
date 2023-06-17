@@ -317,7 +317,7 @@ const Header: React.FC<HeaderProps> = ({
   });
 
   return (
-    <header className="fixed flex justify-between xl:justify-evenly w-screen items-center bg-black z-40 pb-2 md:pb-2 md:pl-4">
+    <header className="fixed flex justify-between xl:justify-evenly w-screen items-center bg-black z-50 pb-2 md:pb-2 md:pl-4">
       <div className="m-0">
         {logo ? (
           <LogoLink logo={logo} alt={alt} logoClassName={logoClassName} />
