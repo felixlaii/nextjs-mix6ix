@@ -39,7 +39,9 @@ const LogoLink: React.FC<
   }
 > = ({ onLinkClick, logoClassName }) => {
   return (
-    <div className="hover:animate-spin">
+    <div
+    // className="hover:animate-tada"
+    >
       <Link
         href="/"
         className={clsx(
