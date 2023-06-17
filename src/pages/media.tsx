@@ -1,3 +1,7 @@
+import clsx from "clsx";
+import { createRef, useState } from "react";
+import VideoGrid from "@/components/VideoGrid";
+
 export const media = [
   "https://res.cloudinary.com/dyjj9jfc2/video/upload/v1687033460/mix_6ix_genesis_ho7bbz.mp4",
   "https://res.cloudinary.com/dyjj9jfc2/video/upload/v1687033457/221029-CDLM-Halloween-MIX6IX-Reel-002_h9ymij.mp4",
