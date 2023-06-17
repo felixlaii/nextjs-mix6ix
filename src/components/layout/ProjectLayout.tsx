@@ -5,6 +5,7 @@ import Header from "./project-layout/Header";
 import { Wrapper } from "./project-layout/Wrapper";
 import { useRouter } from "next/router";
 import { SERVICES_DROPDOWN } from "../../../data/services";
+import { GALLERY_DROPDOWN } from "../../../data/photo-data";
 import { NavigationLink } from "@/types/component-types";
 import logo from "../../../public/images/MIX6IX2022.png";
 import clsx from "clsx";
@@ -26,7 +27,7 @@ export const ProjectLayout: React.FC<PropsWithChildren> = (
       dropdown: SERVICES_DROPDOWN,
     },
     { name: "SHOP", href: "/shop" },
-    { name: "GALLERY", href: "/gallery" },
+    { name: "GALLERY", href: "/gallery", dropdown: GALLERY_DROPDOWN },
     { name: "CONTACT US", href: "/contact-us" },
   ];
 
