@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import { VideoData } from "../../data/media";
-import VideoList from "@/components/VideoList";
 
 const Media: React.FC = () => {
   const [selectedVideo, setSelectedVideo] = useState(VideoData[0]);
@@ -19,29 +18,33 @@ const Media: React.FC = () => {
   }, []);
 
   return (
-    <>
-      <div className="primary-video">
+    <div className="flex">
+      <div className="mt-80 ml-40">
         <video
-          className="primary-video__video"
-          src={selectedVideo.videoSrc}
+          className="aspect-w-25 aspect-h-30 border border-gray-200 rounded-lg dark:border-gray-700"
           controls
+          preload="auto"
+          src={selectedVideo.videoSrc}
         />
       </div>
 
-      <ul>
+      <ul className="mt-72 mr-40 w-full h-full flex flex-col items-center justify-center">
+        <h1 className="text-white">Other Videos</h1>
+
         {otherVideos.map((video) => (
           <li
-            className="w-100"
+            className="m-5 "
             key={video.id}
             onClick={() => handleVideoSelect(video)}
           >
-            <video width="320" height="240" controls>
-              <source src={video.videoSrc} type="video/mp4" />
-            </video>
+            <video
+              className="w-64 h-48 border border-gray-200 rounded-lg dark:border-gray-700 object-cover object-top"
+              src={video.videoSrc}
+            />
           </li>
         ))}
       </ul>
-    </>
+    </div>
   );
 };
 
