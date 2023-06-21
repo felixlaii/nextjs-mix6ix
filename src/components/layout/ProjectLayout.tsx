@@ -27,7 +27,7 @@ export const ProjectLayout: React.FC<PropsWithChildren> = (
       dropdown: SERVICES_DROPDOWN,
     },
     { name: "SHOP", href: "/shop" },
-    { name: "GALLERY", href: "/gallery", dropdown: GALLERY_DROPDOWN },
+    { name: "GALLERY", href: "#", dropdown: GALLERY_DROPDOWN },
     { name: "CONTACT US", href: "/contact-us" },
   ];
 

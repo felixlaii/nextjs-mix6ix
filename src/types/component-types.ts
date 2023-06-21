@@ -33,3 +33,5 @@ export interface HeaderProps {
   alt?: string;
   onLinkClick?: () => void;
 }
+
+export type FooterProps = Pick<HeaderProps, "navigationLinks" | "logo">;
