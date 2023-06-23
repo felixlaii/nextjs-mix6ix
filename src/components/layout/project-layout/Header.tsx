@@ -319,7 +319,7 @@ const Header: React.FC<HeaderProps> = ({
   });
 
   return (
-    <header className="fixed flex justify-between xl:justify-evenly w-screen items-center bg-black z-50 pb-2 md:pb-2 md:pl-4">
+    <header className="img-blur fixed flex justify-between xl:justify-evenly w-screen items-center bg-black z-40 pb-2 md:pb-2 md:pl-4">
       <div className="m-0">
         {logo ? (
           <LogoLink logo={logo} alt={alt} logoClassName={logoClassName} />
@@ -330,7 +330,7 @@ const Header: React.FC<HeaderProps> = ({
         )}
       </div>
       <div className="flex">
-        <div className="hidden sm:flex lg:hidden mt-1">
+        <div className="sm:flex lg:hidden mt-1">
           <Button
             extraClassName={clsx(
               "bg-brand-base px-8 text-sm h-10 mt-1 text-white hover:text-brand-base hover:shadow-[inset_15rem_0_0_0] hover:shadow-white duration-[400ms] transition-[color,box-shadow] rounded-lg border-2 border-brand-base"

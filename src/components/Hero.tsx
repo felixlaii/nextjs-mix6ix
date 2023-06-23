@@ -3,7 +3,7 @@ const Hero: React.FC = () => {
     <div>
       <img
         src="/images/hero-image.jpeg"
-        className="w-full xl:h-[38rem] z-0 object-cover contrast-more"
+        className="img-blur w-full xl:h-[47rem] object-fill contrast-more:"
         alt="Hero Image"
       />
     </div>

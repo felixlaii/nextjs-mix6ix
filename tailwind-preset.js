@@ -55,6 +55,17 @@ module.exports = {
     require("@tailwindcss/typography"),
     require("@tailwindcss/aspect-ratio"),
     require("@tailwindcss/line-clamp"),
+    plugin(function ({ addUtilities }) {
+      const utilities = {
+        ".img-blur": {
+          "border-radius": "20px",
+          "-webkit-box-shadow": "12px 29px 81px 0px rgba(0,0,0,0.75)",
+          "-moz-box-shadow": "12px 29px 81px 0px rgba(0,0,0,0.75)",
+          "box-shadow": "0 0 75px 75px rgba(0, 0, 0, 0.5)",
+        },
+      };
+      addUtilities(utilities, ["response", "hover"]);
+    }),
 
     plugin(function ({ addBase }) {
       addBase({
@@ -79,6 +90,16 @@ module.exports = {
           "-moz-appearance": "textfield",
         },
       });
+    }),
+    plugin(function ({ matchUtilities, theme }) {
+      matchUtilities(
+        {
+          "text-shadow": (value) => ({
+            textShadow: value,
+          }),
+        },
+        { values: theme("textShadow") }
+      );
     }),
   ],
 };
