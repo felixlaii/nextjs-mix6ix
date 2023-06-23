@@ -3,9 +3,10 @@ const Hero: React.FC = () => {
     <div>
       <img
         src="/images/hero-image.jpeg"
-        className="w-full xl:h-[38rem] z-0 object-cover contrast-more"
+        className="img-blur w-full xl:h-[60rem] z-0  object-fill"
         alt="Hero Image"
       />
+      <div className="absolute bg-brand-base/1 z-10 brightness-125"></div>
     </div>
   );
 };

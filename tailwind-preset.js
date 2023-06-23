@@ -55,6 +55,15 @@ module.exports = {
     require("@tailwindcss/typography"),
     require("@tailwindcss/aspect-ratio"),
     require("@tailwindcss/line-clamp"),
+    plugin(function ({ addUtilities }) {
+      const utilities = {
+        ".img-blur": {
+          "box-shadow": "0 0 75px 75px rgba(0, 0, 0, 0.5)",
+          "border-radius": "20px",
+        },
+      };
+      addUtilities(utilities, ["response", "hover"]);
+    }),
 
     plugin(function ({ addBase }) {
       addBase({
