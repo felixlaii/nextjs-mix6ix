@@ -58,8 +58,10 @@ module.exports = {
     plugin(function ({ addUtilities }) {
       const utilities = {
         ".img-blur": {
-          "box-shadow": "0 0 75px 75px rgba(0, 0, 0, 0.5)",
           "border-radius": "20px",
+          "-webkit-box-shadow": "12px 29px 81px 0px rgba(0,0,0,0.75)",
+          "-moz-box-shadow": "12px 29px 81px 0px rgba(0,0,0,0.75)",
+          "box-shadow": "0 0 75px 75px rgba(0, 0, 0, 0.5)",
         },
       };
       addUtilities(utilities, ["response", "hover"]);
