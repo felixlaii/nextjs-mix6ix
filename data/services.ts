@@ -11,7 +11,7 @@ export const MIX_SERVICES: {
     id: "planning",
     img: "https://res.cloudinary.com/dyjj9jfc2/image/upload/v1687031905/drinks-image-01_vkxvvb.jpg",
     description:
-      "MIX6IX aims for cocktail perfection and unforgettable experiences. From initial inquiry to event attendance, we offer personalized consultations and a menu of handcrafted cocktails. Share your vision, and we'll collaborate to create the perfect bar for any occasion.",
+      "MIX6IX offers impeccable cocktails and memorable experiences. With tailored consultations and a curated menu, we bring your vision to life.",
   },
   {
     service: "Bartender/Mixologist Packages",
@@ -19,7 +19,7 @@ export const MIX_SERVICES: {
     id: "bartender-packages",
     img: "https://res.cloudinary.com/dyjj9jfc2/image/upload/v1687031904/drinks-image-04_smj88a.jpg",
     description:
-      "Find the perfect event package after a consultation. Our certified mixologists ensure a safe and entertaining experience for your guests. From setting up a full-service bar to handling all preparations, share your ideas, and we'll take care of the rest. With unbeatable prices in the GTA, choose us for your next party!",
+      "Discover ideal event packages. Our mixologists guarantee safety and fun. Full-service bar setup. Unbeatable prices in GTA.",
   },
   {
     service: "Mixology Workshop/Virtual Workshops",
@@ -27,7 +27,7 @@ export const MIX_SERVICES: {
     id: "bartender-packages",
     img: "https://res.cloudinary.com/dyjj9jfc2/image/upload/v1687031904/drinks-image-05_q1gcqz.jpg",
     description:
-      "Join our Mixology Workshop for team building or private gatherings. This interactive session teaches essential cocktail-making skills. Explore classic recipes and unleash your creativity by crafting unique concoctions. Engage in a fun-filled experience for all!",
+      "Experience our Mixology Workshop: team building, private gatherings, and interactive cocktail-making. Unleash creativity and have fun!",
   },
 
   {
@@ -36,7 +36,7 @@ export const MIX_SERVICES: {
     id: "bartender-packages",
     img: "https://res.cloudinary.com/dyjj9jfc2/image/upload/v1687031904/drinks-image-02_imcrqe.jpg",
     description:
-      "Master the art of bartending with our private training sessions. Whether you're a beginner or want to refine your skills, we customize the program to suit your needs. Learn free pours, techniques, and the significance of each bar tool. Gain the confidence and expertise to create classic cocktails like a pro. Enjoy private sessions focused on building your success behind the bar. Start your bartending career with us!",
+      "Unlock the art of bartending through personalized training sessions. From beginner to expert, elevate your skills and confidence. Become a pro mixologist with us!",
   },
 
   {
@@ -54,7 +54,7 @@ export const MIX_SERVICES: {
     id: "bartender-packages",
     img: "https://res.cloudinary.com/dyjj9jfc2/image/upload/v1687031903/drinks-image-07_zqmuc3.jpg",
     description:
-      "Need an extra hand at the party? We offer servers and support staff to help make your party run as smoothly as possible. All of our staff are experienced in the industry and love to interact with guests. ",
+      "Enhance your party with our professional servers and support staff. Experienced and interactive, they ensure a seamless event.",
   },
 
   {
@@ -63,7 +63,7 @@ export const MIX_SERVICES: {
     id: "bartender-packages",
     img: "https://res.cloudinary.com/dyjj9jfc2/image/upload/v1687031903/drinks-image-08_in0xrw.jpg",
     description:
-      "With the hard work of ingredient sourcing done for you, MIX6IX leaves little room for error for the cocktail enthusiasts at home. -no excessive sampling until after you've read the instructions! All that's left to do is stir, maybe shake, and sip away for a good time.   (TO ORDER: fill out submission form, send us a message on our Instagram page or e-mail us at mix6ixinfo@gmail.com)",
+      "Enjoy hassle-free cocktail making at home with MIX6IX. We provide curated ingredients and instructions for a great time. Order now!",
   },
 ];
 

@@ -56,7 +56,7 @@ export const ServiceLinks: React.FC<ServiceLinkArr> = ({ links }) => {
 
   return (
     <div className="flex md:flex-col md:flex-wrap md:justify-center md:items-center">
-      <div className="flex flex-row md:w-1/2">
+      <div className="flex flex-row justify-between w-full md:w-100">
         {/* Render the top 4 images */}
         {topImages.map((link, index) => (
           <div
@@ -66,23 +66,25 @@ export const ServiceLinks: React.FC<ServiceLinkArr> = ({ links }) => {
             onMouseLeave={() => setHoveredIndex(-1)}
           >
             <motion.div
-              className="box relative"
+              className="box"
               whileHover={{ scale: 1.1 }}
               transition={{ type: "spring", stiffness: 400, damping: 10 }}
             >
               {hoveredIndex === index ? (
                 <motion.p
-                  className="font-extralight text-sm text-center text-white py-4 xl:text-lg description"
+                  className="font-extralight text-xs text-white description w-1/3 h-full md:w-1/4 flex justify-center items-center"
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   transition={{ duration: 0.2 }}
                 >
-                  {link.description}
+                  <span className="flex justify-center text-center items-center">
+                    {link.description}
+                  </span>
                 </motion.p>
               ) : (
                 <>
                   <div className="text-white absolute inset-0 flex items-center justify-center">
-                    <p className="text-md text-center py-20 xl:text-lg">
+                    <p className="text-md text-center xl:text-lg">
                       {link.service}
                     </p>
                   </div>
@@ -90,7 +92,7 @@ export const ServiceLinks: React.FC<ServiceLinkArr> = ({ links }) => {
                     <img
                       src={link.img}
                       alt={link.service}
-                      className="rounded-full z-10 h-40 w-40 mx-auto py-30 object-cover hover:img-hover mt-3"
+                      className="rounded-full z-10 h-72 w-72 mx-auto object-cover hover:img-hover mt-3"
                     />
                   </Link>
                 </>
@@ -100,7 +102,7 @@ export const ServiceLinks: React.FC<ServiceLinkArr> = ({ links }) => {
         ))}
       </div>
 
-      <div className="flex flex-row md:w-1/2">
+      <div className="flex flex-row justify-between w-full md:w-100 overflow-hidden">
         {/* Render the bottom 3 images */}
         {bottomImages.map((link, index) => (
           <div
@@ -110,23 +112,25 @@ export const ServiceLinks: React.FC<ServiceLinkArr> = ({ links }) => {
             onMouseLeave={() => setHoveredIndex(-1)}
           >
             <motion.div
-              className="box relative"
+              className="box "
               whileHover={{ scale: 1.1 }}
               transition={{ type: "spring", stiffness: 400, damping: 10 }}
             >
               {hoveredIndex === index + 4 ? (
                 <motion.p
-                  className="font-extralight text-sm text-center text-white py-4 xl:text-lg description"
+                  className="font-extralight text-xs text-white description w-1/3 h-full md:w-1/4 flex justify-center text-center items-center"
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   transition={{ duration: 0.2 }}
                 >
-                  {link.description}
+                  <span className="flex justify-center text-center items-center">
+                    {link.description}
+                  </span>
                 </motion.p>
               ) : (
                 <>
                   <div className="text-white absolute inset-0 flex items-center justify-center">
-                    <p className="font-bold text-xl text-center py-4 xl:text-lg">
+                    <p className="font-bold text-xl text-center xl:text-lg">
                       {link.service}
                     </p>
                   </div>
@@ -134,7 +138,7 @@ export const ServiceLinks: React.FC<ServiceLinkArr> = ({ links }) => {
                     <img
                       src={link.img}
                       alt={link.service}
-                      className="rounded-full z-10 h-40 w-40 mx-auto object-cover hover:img-hover mt-3"
+                      className="rounded-full z-10 h-72 w-72 mx-auto object-cover hover:img-hover mt-3"
                     />
                   </Link>
                 </>
@@ -156,7 +160,7 @@ const Services: React.FC = () => {
     }
   }, [controls, inView]);
   return (
-    <div className="w-[calc(10% - 10px)] mx-10 xl:mx-0 relative z-10 animate-fadeInFast transition">
+    <div className="w-[calc(10% - 10px)] mx-27 xl:mx-40 relative z-10 animate-fadeInFast transition">
       <h1 className="text-center pt-24 sm:pt-0 my-12 font-semibold text-2xl xl:text-3xl text-shadow-lg shadow-zinc-300">
         Services
       </h1>
@@ -168,9 +172,6 @@ const Services: React.FC = () => {
       <div className="mb-12">
         <ServiceLinks links={MIX_SERVICES} />
       </div>
-      {/* <div className="mt-24">
-        <ServiceList links={MIX_SERVICES} />
-      </div> */}
     </div>
   );
 };
