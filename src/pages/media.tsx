@@ -6,6 +6,7 @@ const Media: React.FC = () => {
   const [otherVideos, setOtherVideos] = useState(
     VideoData.filter((video) => video.id !== selectedVideo.id)
   );
+  const [showMore, setShowMore] = useState(false);
 
   const handleVideoSelect = (video: (typeof VideoData)[number]) => {
     setSelectedVideo(video);
@@ -14,8 +15,13 @@ const Media: React.FC = () => {
 
   useEffect(() => {
     setSelectedVideo(VideoData[0]);
-    setOtherVideos(VideoData.slice(1));
+    setOtherVideos(VideoData.slice(1, 5)); // Initially show only four videos
   }, []);
+
+  const handleShowMore = () => {
+    setOtherVideos(VideoData.slice(1)); // Show all remaining videos
+    setShowMore(true); // Set the flag to indicate that all videos are being shown
+  };
 
   return (
     <div className="flex">
@@ -33,7 +39,7 @@ const Media: React.FC = () => {
 
         {otherVideos.map((video) => (
           <li
-            className="m-5 "
+            className="m-5"
             key={video.id}
             onClick={() => handleVideoSelect(video)}
           >
@@ -43,6 +49,15 @@ const Media: React.FC = () => {
             />
           </li>
         ))}
+
+        {!showMore && otherVideos.length > 0 && (
+          <button
+            className="text-center text-white sm:pt-0 my-2 font-semibold text-ll xl:text-1xl text-shadow-lg shadow-zinc-300"
+            onClick={handleShowMore}
+          >
+            Show More
+          </button>
+        )}
       </ul>
     </div>
   );
