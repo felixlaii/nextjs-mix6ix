@@ -52,7 +52,7 @@ const Media: React.FC = () => {
 
         {!showMore && otherVideos.length > 0 && (
           <button
-            className="mt-4 px-4 py-2 text-white bg-blue-500 rounded hover:bg-blue-700"
+            className="text-center text-white sm:pt-0 my-2 font-semibold text-ll xl:text-1xl text-shadow-lg shadow-zinc-300"
             onClick={handleShowMore}
           >
             Show More
