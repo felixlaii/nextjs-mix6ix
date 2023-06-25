@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { useAnimation, motion, AnimatePresence } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { MIX_SERVICES } from "../../data/services";
+import PageHeading from "@/components/ui/PageHeading";
 
 export interface ServiceImageProps {
   img: string;
@@ -14,7 +15,6 @@ export interface ServiceImageProps {
 export interface ServiceLinkProps {
   service: string;
   description: string;
-  href: string;
   img: string;
   id: string;
 }
@@ -55,13 +55,13 @@ export const ServiceLinks: React.FC<ServiceLinkArr> = ({ links }) => {
   const bottomImages = links.slice(4, 7); // Select the next 3 images
 
   return (
-    <div className="flex md:flex-col md:flex-wrap md:justify-center md:items-center">
+    <div className="flex md:flex-col md:flex-wrap md:justify-center md:items-center ml-[2rem] mr-[2rem]">
       <div className="flex flex-row justify-between w-full md:w-100">
         {/* Render the top 4 images */}
         {topImages.map((link, index) => (
           <div
             key={link.service}
-            className="flex justify-center xl:w-fit md:hover:scale-110 md:ease-in-out md:duration-200 md:pt-12 md:mx-30 relative"
+            className="flex justify-center xl:w-fit md:hover:scale-110 md:ease-in-out md:duration-200 md:pt-12 relative"
             onMouseEnter={() => setHoveredIndex(index)}
             onMouseLeave={() => setHoveredIndex(-1)}
           >
@@ -72,29 +72,25 @@ export const ServiceLinks: React.FC<ServiceLinkArr> = ({ links }) => {
             >
               {hoveredIndex === index ? (
                 <motion.p
-                  className="font-extralight text-xs text-white description w-1/3 h-full md:w-1/4 flex justify-center items-center"
+                  className="font-extralight text-xs w-[10rem] text-white description h-full flex justify-center text-center items-center"
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   transition={{ duration: 0.2 }}
                 >
-                  <span className="flex justify-center text-center items-center">
-                    {link.description}
-                  </span>
+                  <span>{link.description}</span>
                 </motion.p>
               ) : (
                 <>
-                  <div className="text-white absolute inset-0 flex items-center justify-center">
-                    <p className="text-md text-center xl:text-lg">
+                  <img
+                    src={link.img}
+                    alt={link.service}
+                    className="rounded-full z-10 h-[20rem] w-[21rem] mx-auto object-center hover:img-hover mt-3"
+                  />
+                  <div className="text-white inset-0">
+                    <p className="text-md text-center xl:text-lg text-shadow-lg shadow-zinc-700">
                       {link.service}
                     </p>
                   </div>
-                  <Link href={link.href}>
-                    <img
-                      src={link.img}
-                      alt={link.service}
-                      className="rounded-full z-10 h-72 w-72 mx-auto object-cover hover:img-hover mt-3"
-                    />
-                  </Link>
                 </>
               )}
             </motion.div>
@@ -107,7 +103,7 @@ export const ServiceLinks: React.FC<ServiceLinkArr> = ({ links }) => {
         {bottomImages.map((link, index) => (
           <div
             key={link.service}
-            className="flex justify-center xl:w-fit md:hover:scale-110 md:ease-in-out md:duration-200 md:pt-12 mx-auto md:mx-30 relative"
+            className="flex justify-center xl:w-fit md:hover:scale-110 md:ease-in-out md:duration-200 md:pt-12 relative"
             onMouseEnter={() => setHoveredIndex(index + 4)}
             onMouseLeave={() => setHoveredIndex(-1)}
           >
@@ -118,7 +114,7 @@ export const ServiceLinks: React.FC<ServiceLinkArr> = ({ links }) => {
             >
               {hoveredIndex === index + 4 ? (
                 <motion.p
-                  className="font-extralight text-xs text-white description w-1/3 h-full md:w-1/4 flex justify-center text-center items-center"
+                  className="font-extralight w-[10rem] text-xs text-white description h-full flex justify-center text-center items-center"
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   transition={{ duration: 0.2 }}
@@ -129,18 +125,16 @@ export const ServiceLinks: React.FC<ServiceLinkArr> = ({ links }) => {
                 </motion.p>
               ) : (
                 <>
-                  <div className="text-white absolute inset-0 flex items-center justify-center">
-                    <p className="font-bold text-xl text-center xl:text-lg">
+                  <img
+                    src={link.img}
+                    alt={link.service}
+                    className="rounded-full z-10 h-[20rem] w-[21rem]  mx-auto object-center hover:img-hover mt-3"
+                  />
+                  <div className="text-white inset-0">
+                    <p className="font-bold text-xl text-center xl:text-lg text-shadow-lg shadow-zinc-700">
                       {link.service}
                     </p>
                   </div>
-                  <Link href={link.href}>
-                    <img
-                      src={link.img}
-                      alt={link.service}
-                      className="rounded-full z-10 h-72 w-72 mx-auto object-cover hover:img-hover mt-3"
-                    />
-                  </Link>
                 </>
               )}
             </motion.div>
@@ -160,10 +154,10 @@ const Services: React.FC = () => {
     }
   }, [controls, inView]);
   return (
-    <div className="w-[calc(10% - 10px)] mx-27 xl:mx-40 relative z-10 animate-fadeInFast transition">
-      <h1 className="text-center text-white pt-24 sm:pt-0 my-12 font-semibold text-2xl xl:text-3xl text-shadow-lg shadow-zinc-300">
-        Our Services
-      </h1>
+    <div>
+      <div className="relative pt-10 sm:pt-0 h-[12rem] md:h-[16rem]">
+        <PageHeading title="Our Services" />
+      </div>
 
       <div className="mb-12">
         <ServiceLinks links={MIX_SERVICES} />

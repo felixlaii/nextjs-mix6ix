@@ -1,13 +1,13 @@
 export const MIX_SERVICES: {
   service: string;
   description: string;
-  href: string;
+  // href: string;
   img: string;
   id: string;
 }[] = [
   {
     service: "Planning",
-    href: "/services#planning",
+    // href: "/services#planning",
     id: "planning",
     img: "https://res.cloudinary.com/dyjj9jfc2/image/upload/v1687031905/drinks-image-01_vkxvvb.jpg",
     description:
@@ -15,7 +15,7 @@ export const MIX_SERVICES: {
   },
   {
     service: "Bartender/Mixologist Packages",
-    href: "/services#bartender-packages",
+    // href: "/services#bartender-packages",
     id: "bartender-packages",
     img: "https://res.cloudinary.com/dyjj9jfc2/image/upload/v1687031904/drinks-image-04_smj88a.jpg",
     description:
@@ -23,7 +23,7 @@ export const MIX_SERVICES: {
   },
   {
     service: "Mixology Workshop/Virtual Workshops",
-    href: "/services#mixology-workshops",
+    // href: "/services#mixology-workshops",
     id: "bartender-packages",
     img: "https://res.cloudinary.com/dyjj9jfc2/image/upload/v1687031904/drinks-image-05_q1gcqz.jpg",
     description:
@@ -32,7 +32,7 @@ export const MIX_SERVICES: {
 
   {
     service: "Private Bartending 101 Class",
-    href: "/services#bartending-101",
+    // href: "/services#bartending-101",
     id: "bartender-packages",
     img: "https://res.cloudinary.com/dyjj9jfc2/image/upload/v1687031904/drinks-image-02_imcrqe.jpg",
     description:
@@ -41,7 +41,7 @@ export const MIX_SERVICES: {
 
   {
     service: "Custom Bar Menus",
-    href: "/services#custom-menus",
+    // href: "/services#custom-menus",
     id: "bartender-packages",
     img: "https://res.cloudinary.com/dyjj9jfc2/image/upload/v1687031904/drinks-image-03_hcoy45.jpg",
     description:
@@ -50,7 +50,7 @@ export const MIX_SERVICES: {
 
   {
     service: "Servers/Support Staff and Bar Backs",
-    href: "/services#support-staff",
+    // href: "/services#support-staff",
     id: "bartender-packages",
     img: "https://res.cloudinary.com/dyjj9jfc2/image/upload/v1687031903/drinks-image-07_zqmuc3.jpg",
     description:
@@ -59,7 +59,7 @@ export const MIX_SERVICES: {
 
   {
     service: "Premium Cocktail Kits & Custom Cocktail Kits",
-    href: "/services#cocktail-kits",
+    // href: "/services#cocktail-kits",
     id: "bartender-packages",
     img: "https://res.cloudinary.com/dyjj9jfc2/image/upload/v1687031903/drinks-image-08_in0xrw.jpg",
     description:
@@ -67,21 +67,21 @@ export const MIX_SERVICES: {
   },
 ];
 
-export const SERVICES_DROPDOWN = [
-  { name: "Planning", href: "/services#planning" },
-  {
-    name: "Bartender/Mixologist Packages",
-    href: "/services#bartender-packages",
-  },
-  {
-    name: "Mixology Workshops",
-    href: "/services#mixology-workshops",
-  },
-  { name: "Private Bartending Class", href: "/services#bartending-101" },
-  {
-    name: "Custom Bar Menus",
-    href: "/services#custom-menus",
-  },
-  { name: "Servers/Support", href: "/services#support-staff" },
-  { name: "Cocktail Kits", href: "/services#cocktail-kits" },
-];
+// export const SERVICES_DROPDOWN = [
+//   { name: "Planning", href: "/services#planning" },
+//   {
+//     name: "Bartender/Mixologist Packages",
+//     href: "/services#bartender-packages",
+//   },
+//   {
+//     name: "Mixology Workshops",
+//     href: "/services#mixology-workshops",
+//   },
+//   { name: "Private Bartending Class", href: "/services#bartending-101" },
+//   {
+//     name: "Custom Bar Menus",
+//     href: "/services#custom-menus",
+//   },
+//   { name: "Servers/Support", href: "/services#support-staff" },
+//   { name: "Cocktail Kits", href: "/services#cocktail-kits" },
+// ];
