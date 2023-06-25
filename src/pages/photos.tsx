@@ -1,10 +1,11 @@
 import ImageGrid from "@/components/ImageGrid";
 import clsx from "clsx";
 import { createRef, useState } from "react";
+import PageHeading from "@/components/ui/PageHeading";
 
 export const images = [
-  "https://res.cloudinary.com/dyjj9jfc2/image/upload/v1687031907/drinks-image-09_rtjuiq.jpg",
   "https://res.cloudinary.com/dyjj9jfc2/image/upload/v1687031905/drinks-image-01_vkxvvb.jpg",
+  "https://res.cloudinary.com/dyjj9jfc2/image/upload/v1687031907/drinks-image-09_rtjuiq.jpg",
   "https://res.cloudinary.com/dyjj9jfc2/image/upload/v1687031904/drinks-image-04_smj88a.jpg",
   "https://res.cloudinary.com/dyjj9jfc2/image/upload/v1687031904/drinks-image-05_q1gcqz.jpg",
   "https://res.cloudinary.com/dyjj9jfc2/image/upload/v1687031904/drinks-image-02_imcrqe.jpg",
@@ -15,7 +16,7 @@ export const images = [
 ];
 
 const photoClassName =
-  "h-64 md:h-96 xl:h-[29rem] max-w-3xl rounded-lg shadow-lg";
+  "h-[25rem] md:h-[29rem] xl:h-[30rem] max-w-3xl rounded-lg shadow-lg";
 
 const Photos: React.FC = () => {
   const [currentImage, setCurrentImage] = useState<number>(0);
@@ -76,41 +77,46 @@ const Photos: React.FC = () => {
   );
 
   return (
-    <div
-      className={clsx(
-        "flex flex-col justify-center items-center w-[calc(10% - 10px)] mx-5 lg:mx-auto pb-8"
-      )}
-    >
-      <div className="relative pt-10 sm:pt-0 h-[14rem] md:h-[18rem]"></div>
-      <div className={clsx("relative mt-12", photoClassName)}>
-        <div
-          className={clsx(
-            "flex overflow-x-hidden snap-mandatory snap-x",
-            photoClassName
-          )}
-        >
-          {sliderControl(true)}
-          {images.map((img, i) => (
-            <div
-              className="w-full flex-shrink-0"
-              key={`${img} - ${i}`}
-              ref={refs[i]}
-              id={i.toString()}
-            >
-              <img
-                src={img}
-                className={clsx("object-cover w-full h-full", photoClassName)}
-                alt="Our Practice"
-              />
-            </div>
-          ))}
-          {sliderControl()}
+    <>
+      <div className="relative pt-10 sm:pt-0 h-[12rem] md:h-[16rem]">
+        <PageHeading title="Photo Gallery" />
+      </div>
+      <div
+        className={clsx(
+          "flex flex-col justify-center items-center w-[calc(10% - 10px)] mx-5 lg:mx-auto pb-8"
+        )}
+      >
+        {/* <div className="relative pt-5 sm:pt-0 h-[14rem] md:h-[18rem]"></div> */}
+        <div className={clsx("relative mt-12", photoClassName)}>
+          <div
+            className={clsx(
+              "flex overflow-x-hidden snap-mandatory snap-x",
+              photoClassName
+            )}
+          >
+            {sliderControl(true)}
+            {images.map((img, i) => (
+              <div
+                className="w-full flex-shrink-0"
+                key={`${img} - ${i}`}
+                ref={refs[i]}
+                id={i.toString()}
+              >
+                <img
+                  src={img}
+                  className={clsx("object-cover w-full h-full", photoClassName)}
+                  alt="Our Practice"
+                />
+              </div>
+            ))}
+            {sliderControl()}
+          </div>
+        </div>
+        <div className="mt-8 max-w-3xl">
+          <ImageGrid />
         </div>
       </div>
-      <div className="mt-8 max-w-3xl">
-        <ImageGrid />
-      </div>
-    </div>
+    </>
   );
 };
 
