@@ -1,3 +1,8 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@font-face {
+  font-family: lemonmilk;
+  src: url("/fonts/lemonmilk-light.otf") format("opentype");
+}

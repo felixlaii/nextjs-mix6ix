@@ -72,7 +72,7 @@ export const ServiceLinks: React.FC<ServiceLinkArr> = ({ links }) => {
             >
               {hoveredIndex === index ? (
                 <motion.p
-                  className="font-extralight text-xs w-[10rem] text-white description h-full flex justify-center text-center items-center"
+                  className="ont-extralight text-xs w-[10rem] text-white description h-full flex justify-center text-center items-center"
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   transition={{ duration: 0.2 }}
@@ -86,8 +86,8 @@ export const ServiceLinks: React.FC<ServiceLinkArr> = ({ links }) => {
                     alt={link.service}
                     className="rounded-full z-10 h-[20rem] w-[21rem] mx-auto object-center hover:img-hover mt-3"
                   />
-                  <div className="text-white inset-0">
-                    <p className="text-md text-center xl:text-lg text-shadow-lg shadow-zinc-700">
+                  <div className="text-white inset-0 ">
+                    <p className="font-primary text-sm text-center xl:text-lg text-shadow-lg shadow-zinc-700">
                       {link.service}
                     </p>
                   </div>
@@ -131,7 +131,7 @@ export const ServiceLinks: React.FC<ServiceLinkArr> = ({ links }) => {
                     className="rounded-full z-10 h-[20rem] w-[21rem]  mx-auto object-center hover:img-hover mt-3"
                   />
                   <div className="text-white inset-0">
-                    <p className="font-bold text-xl text-center xl:text-lg text-shadow-lg shadow-zinc-700">
+                    <p className="font-primary text-xs text-center xl:text-lg text-shadow-lg shadow-zinc-700">
                       {link.service}
                     </p>
                   </div>

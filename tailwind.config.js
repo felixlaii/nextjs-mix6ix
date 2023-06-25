@@ -9,11 +9,16 @@ module.exports = {
     require("@tailwindcss/typography"),
     require("@tailwindcss/aspect-ratio"),
     require("@tailwindcss/line-clamp"),
-
     require("@tailwindcss/aspect-ratio"),
   ],
+
   presets: [require("./tailwind-preset")],
+
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        primary: "lemonmilk",
+      },
+    },
   },
 };
