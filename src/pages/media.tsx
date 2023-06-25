@@ -21,7 +21,7 @@ const Media: React.FC = () => {
     <div className="flex">
       <div className="mt-80 ml-40">
         <video
-          className="h-[50rem] w-[100rem] border border-gray-200 dark:border-gray-700"
+          className="h-[50rem] w-[100rem] border border-gray-700 dark:border-gray-700"
           controls
           preload="auto"
           src={selectedVideo.videoSrc}
@@ -40,7 +40,7 @@ const Media: React.FC = () => {
                 onClick={() => handleVideoSelect(video)}
               >
                 <video
-                  className="w-64 h-48 border border-gray-200  dark:border-gray-700 object-cover object-top"
+                  className="w-64 h-48 border border-gray-700  dark:border-gray-700 object-cover object-top"
                   src={video.videoSrc}
                 />
               </li>
