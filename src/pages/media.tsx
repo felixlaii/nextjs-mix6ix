@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { VideoData } from "../../data/media";
+import PageHeading from "@/components/ui/PageHeading";
 
 const Media: React.FC = () => {
   const [selectedVideo, setSelectedVideo] = useState(VideoData[0]);
@@ -18,37 +19,44 @@ const Media: React.FC = () => {
   }, []);
 
   return (
-    <div className="flex">
-      <div className="mt-80 ml-40">
-        <video
-          className="h-[50rem] w-[100rem] border border-gray-700 dark:border-gray-700"
-          controls
-          preload="auto"
-          src={selectedVideo.videoSrc}
-        />
+    <>
+      <div className="relative pt-10 sm:pt-0 h-[12rem] md:h-[16rem]">
+        <PageHeading title="Video Gallery" />
       </div>
+      <div className="flex">
+        <div className=" mt-[8rem] ml-40">
+          <video
+            className="h-[50rem] w-[100rem] border border-gray-700 dark:border-gray-700"
+            controls
+            preload="auto"
+            src={selectedVideo.videoSrc}
+          />
+        </div>
 
-      <div className="mt-72 mr-40 w-full h-full flex flex-col items-center justify-center">
-        <h1 className="text-white">Other Videos</h1>
+        <div className="mt-[8rem] mr-40 w-full h-full flex flex-col items-center justify-center">
+          <h1 className="text-white text-lg text-shadow-lg shadow-zinc-300">
+            Other Videos
+          </h1>
 
-        <div className="overflow-y-auto">
-          <ul className="w-80 h-[49rem]">
-            {otherVideos.map((video) => (
-              <li
-                className="m-5"
-                key={video.id}
-                onClick={() => handleVideoSelect(video)}
-              >
-                <video
-                  className="w-64 h-48 border border-gray-700  dark:border-gray-700 object-cover object-top"
-                  src={video.videoSrc}
-                />
-              </li>
-            ))}
-          </ul>
+          <div className="overflow-y-auto">
+            <ul className="w-80 h-[48rem]">
+              {otherVideos.map((video) => (
+                <li
+                  className="m-5"
+                  key={video.id}
+                  onClick={() => handleVideoSelect(video)}
+                >
+                  <video
+                    className="w-64 h-48 border border-gray-700  dark:border-gray-700 object-cover object-top"
+                    src={video.videoSrc}
+                  />
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 
