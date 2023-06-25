@@ -55,7 +55,7 @@ export const ServiceLinks: React.FC<ServiceLinkArr> = ({ links }) => {
   const bottomImages = links.slice(4, 7); // Select the next 3 images
 
   return (
-    <div className="flex md:flex-col md:flex-wrap md:justify-center md:items-center ml-[2rem] mr-[2rem]">
+    <div className="flex flex-col flex-wrap justify-center items-center ml-[5rem] mr-[5rem]">
       <div className="flex flex-row justify-between w-full md:w-100">
         {/* Render the top 4 images */}
         {topImages.map((link, index) => (
@@ -72,7 +72,7 @@ export const ServiceLinks: React.FC<ServiceLinkArr> = ({ links }) => {
             >
               {hoveredIndex === index ? (
                 <motion.p
-                  className="ont-extralight text-xs w-[10rem] text-white description h-full flex justify-center text-center items-center"
+                  className="font-extralight text-xs w-[10rem] text-white description h-full flex justify-center text-center items-center"
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   transition={{ duration: 0.2 }}
@@ -84,10 +84,10 @@ export const ServiceLinks: React.FC<ServiceLinkArr> = ({ links }) => {
                   <img
                     src={link.img}
                     alt={link.service}
-                    className="rounded-full z-10 h-[20rem] w-[21rem] mx-auto object-center hover:img-hover mt-3"
+                    className="rounded-full z-10 h-[5rem] w-[6rem] md:h-[10rem] md:w-[11rem] xl:h-[15rem] xl:w-[16rem] mx-auto object-center hover:img-hover mt-3"
                   />
-                  <div className="text-white inset-0 ">
-                    <p className="font-primary text-sm text-center xl:text-lg text-shadow-lg shadow-zinc-700">
+                  <div className="text-white inset-0">
+                    <p className="font-primary text-xs md:text-sm text-center xl:text-md text-shadow-lg shadow-zinc-700 mt-2">
                       {link.service}
                     </p>
                   </div>
@@ -98,7 +98,7 @@ export const ServiceLinks: React.FC<ServiceLinkArr> = ({ links }) => {
         ))}
       </div>
 
-      <div className="flex flex-row justify-between w-full md:w-100 overflow-hidden">
+      <div className="flex flex-row justify-between w-full md:w-100 overflow-hidden mt-[5rem]">
         {/* Render the bottom 3 images */}
         {bottomImages.map((link, index) => (
           <div
@@ -128,10 +128,10 @@ export const ServiceLinks: React.FC<ServiceLinkArr> = ({ links }) => {
                   <img
                     src={link.img}
                     alt={link.service}
-                    className="rounded-full z-10 h-[20rem] w-[21rem]  mx-auto object-center hover:img-hover mt-3"
+                    className="rounded-full z-10 h-[5rem] w-[6rem] md:h-[10rem] md:w-[11rem] xl:h-[15rem] xl:w-[16rem] mx-auto object-center hover:img-hover mt-3"
                   />
                   <div className="text-white inset-0">
-                    <p className="font-primary text-xs text-center xl:text-lg text-shadow-lg shadow-zinc-700">
+                    <p className="font-primary text-xs md:text-sm text-center xl:text-md text-shadow-lg shadow-zinc-700 mt-2">
                       {link.service}
                     </p>
                   </div>

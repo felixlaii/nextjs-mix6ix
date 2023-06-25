@@ -14,7 +14,7 @@ export const MIX_SERVICES: {
       "MIX6IX offers impeccable cocktails and memorable experiences. With tailored consultations and a curated menu, we bring your vision to life.",
   },
   {
-    service: "Bartender/Mixologist Packages",
+    service: "Mixologist Packages",
     // href: "/services#bartender-packages",
     id: "bartender-packages",
     img: "https://res.cloudinary.com/dyjj9jfc2/image/upload/v1687031904/drinks-image-04_smj88a.jpg",
@@ -22,7 +22,7 @@ export const MIX_SERVICES: {
       "Discover ideal event packages. Our mixologists guarantee safety and fun. Full-service bar setup. Unbeatable prices in GTA.",
   },
   {
-    service: "Mixology Workshop/Virtual Workshops",
+    service: "Mixology/Virtual Workshops",
     // href: "/services#mixology-workshops",
     id: "bartender-packages",
     img: "https://res.cloudinary.com/dyjj9jfc2/image/upload/v1687031904/drinks-image-05_q1gcqz.jpg",
@@ -31,7 +31,7 @@ export const MIX_SERVICES: {
   },
 
   {
-    service: "Private Bartending 101 Class",
+    service: "Private Bartending Class",
     // href: "/services#bartending-101",
     id: "bartender-packages",
     img: "https://res.cloudinary.com/dyjj9jfc2/image/upload/v1687031904/drinks-image-02_imcrqe.jpg",
@@ -49,7 +49,7 @@ export const MIX_SERVICES: {
   },
 
   {
-    service: "Servers/Support Staff and Bar Backs",
+    service: "Servers/Support Staff",
     // href: "/services#support-staff",
     id: "bartender-packages",
     img: "https://res.cloudinary.com/dyjj9jfc2/image/upload/v1687031903/drinks-image-07_zqmuc3.jpg",
@@ -58,7 +58,7 @@ export const MIX_SERVICES: {
   },
 
   {
-    service: "Premium Cocktail Kits & Custom Cocktail Kits",
+    service: "Premium Cocktail Kits",
     // href: "/services#cocktail-kits",
     id: "bartender-packages",
     img: "https://res.cloudinary.com/dyjj9jfc2/image/upload/v1687031903/drinks-image-08_in0xrw.jpg",
