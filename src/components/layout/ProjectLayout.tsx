@@ -4,7 +4,6 @@ import Footer from "./project-layout/Footer";
 import Header from "./project-layout/Header";
 import { Wrapper } from "./project-layout/Wrapper";
 import { useRouter } from "next/router";
-import { SERVICES_DROPDOWN } from "../../../data/services";
 import { GALLERY_DROPDOWN } from "../../../data/photo-data";
 import { NavigationLink } from "@/types/component-types";
 import logo from "../../../public/images/MIX6IX2022.png";
@@ -24,7 +23,6 @@ export const ProjectLayout: React.FC<PropsWithChildren> = (
     {
       name: "SERVICES",
       href: "/services",
-      dropdown: SERVICES_DROPDOWN,
     },
     { name: "SHOP", href: "/shop" },
     { name: "GALLERY", href: "#", dropdown: GALLERY_DROPDOWN },
