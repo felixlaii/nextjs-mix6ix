@@ -1,8 +1,7 @@
 export const VideoData: {
   id: number;
   videoSrc: string;
-  thumbnail?: string;
-  showThumbnail?: boolean;
+  // title: string;
 }[] = [
   {
     id: 1,
