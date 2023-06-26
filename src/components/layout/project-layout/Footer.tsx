@@ -1,6 +1,5 @@
 import Link from "next/link";
-import { BsFacebook } from "react-icons/bs";
-import { BsTiktok } from "react-icons/bs";
+import { BsFacebook, BsTiktok } from "react-icons/bs";
 import { MdOutlineContactPhone } from "react-icons/md";
 import {
   AiOutlineMail,
@@ -15,7 +14,7 @@ import { MIX6IX_DETAILS } from "../../../../data/mix6ix-info";
 
 const iconClassName = "mt-1 mr-2 w-4 h-4 text-white";
 const divClassName = " flex flex-row justify-center mt-5 mb-1";
-const socialIconClassName = "mt-5 mr-2 w-10 h-8 text-white";
+const socialIconClassName = "mt-5 mb-3 mr-2 w-7 h-7 text-white";
 
 const LogoFooter = () => {
   return (
@@ -35,7 +34,7 @@ const FooterHeading: React.FC<{ title: string; icon: any }> = ({
     <div className="flex justify-center bg-white/20 w-full h-10">
       <div className="flex relative my-auto">
         <div>{icon}</div>
-        <h2 className=" tracking-widest text-md text-white">
+        <h2 className="font-primary tracking-widest text-md text-white">
           <strong>{title}</strong>
         </h2>
       </div>
@@ -56,7 +55,7 @@ const FooterMenu: React.FC<Pick<FooterProps, "navigationLinks">> = ({
 
         <ul className="flex flex-col mx-auto text-md gap-y-2 font-light text-white mt-4">
           {navigationLinks.map((link) => (
-            <li key={link.name}>
+            <li className="font-primary text-xs" key={link.name}>
               {link.name ? (
                 <div className="hover:font-medium">
                   <Link href={link.href}>
@@ -131,7 +130,7 @@ const Mix6ixContact = () => {
         <div className={divClassName}>
           <AiOutlineMail className={iconClassName} />
           <a
-            className="hover:underline text-sm text-white"
+            className="font-primary text-xs hover:underline text-white"
             href={`mailto:${MIX6IX_DETAILS.email}`}
           >
             {MIX6IX_DETAILS.email}
