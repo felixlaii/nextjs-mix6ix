@@ -1,19 +1,26 @@
-import Logo from "../../Logo";
-import clsx from "clsx";
 import Link from "next/link";
-import { BsFacebook } from "react-icons/bs";
-import { AiFillInstagram, AiOutlineMenu } from "react-icons/ai";
+import { BsFacebook, BsTiktok } from "react-icons/bs";
+import { MdOutlineContactPhone } from "react-icons/md";
+import {
+  AiOutlineMail,
+  AiOutlineMenu,
+  AiOutlinePhone,
+  AiFillInstagram,
+} from "react-icons/ai";
+import { BiDrink } from "react-icons/bi";
 import { FooterProps } from "@/types/component-types";
 import { snakeCaseToTitleCase } from "@/lib/functions";
-import Button from "@/components/ui/inputs/Button";
+import { MIX6IX_DETAILS } from "../../../../data/mix6ix-info";
 
 const iconClassName = "mt-1 mr-2 w-4 h-4 text-white";
+const divClassName = " flex flex-row justify-center mt-5 mb-1";
+const socialIconClassName = "mt-5 mb-3 mr-2 w-7 h-7 text-white";
 
 const LogoFooter = () => {
   return (
-    <div className="h-full bg-brand-evenLighter flex justify-center w-full">
+    <div className="h-full flex justify-center w-full">
       <div className="relative my-auto">
-        <Logo />
+        <img className="h-[10rem]" src="/images/mix-shaker.png" alt="logo" />
       </div>
     </div>
   );
@@ -27,7 +34,7 @@ const FooterHeading: React.FC<{ title: string; icon: any }> = ({
     <div className="flex justify-center bg-white/20 w-full h-10">
       <div className="flex relative my-auto">
         <div>{icon}</div>
-        <h2 className=" tracking-widest text-md text-white">
+        <h2 className="font-primary tracking-widest text-md text-white">
           <strong>{title}</strong>
         </h2>
       </div>
@@ -48,8 +55,8 @@ const FooterMenu: React.FC<Pick<FooterProps, "navigationLinks">> = ({
 
         <ul className="flex flex-col mx-auto text-md gap-y-2 font-light text-white mt-4">
           {navigationLinks.map((link) => (
-            <li key={link.name}>
-              {link.name !== "FORMS" ? (
+            <li className="font-primary text-xs" key={link.name}>
+              {link.name ? (
                 <div className="hover:font-medium">
                   <Link href={link.href}>
                     {snakeCaseToTitleCase(link.name)}
@@ -79,19 +86,74 @@ const Mix6ixSocials = () => {
     <div>
       <FooterHeading
         title="SOCIALS"
-        icon={<AiFillInstagram className={iconClassName} />}
+        icon={<BiDrink className={iconClassName} />}
       />
+      <div className="flex flex-col items-center">
+        <div>
+          <a href="https://www.instagram.com/mix.6ix/" target="_blank">
+            {" "}
+            <AiFillInstagram className={socialIconClassName} />
+          </a>
+          <a
+            href="https://www.tiktok.com/@mix.6ix?_t=8dTWCTllNv4&_r=1"
+            target="_blank"
+          >
+            <BsTiktok className={socialIconClassName} />
+          </a>
+          <a href="https://www.facebook.com/MIXX6IX" target="_blank">
+            {" "}
+            <BsFacebook className={socialIconClassName} />
+          </a>
+        </div>
+      </div>
     </div>
   );
 };
-const Footer: React.FC = () => {
+
+const Mix6ixContact = () => {
+  return (
+    <div className="flex flex-col justify-between h-full border-t-8 md:border-none border-brand-lightest bg-brand-lighter md:bg-brand-darkest">
+      <FooterHeading
+        title="CONTACT"
+        icon={<MdOutlineContactPhone className={iconClassName} />}
+      />
+      <div className="pb-8 pt-4 md:pt-0">
+        <div className={divClassName}>
+          <AiOutlinePhone className={iconClassName} />
+          <a
+            className="hover:underline text-sm text-white"
+            href={`tel:${MIX6IX_DETAILS.phone}`}
+          >
+            {MIX6IX_DETAILS.phone}
+          </a>
+        </div>
+        <div className={divClassName}>
+          <AiOutlineMail className={iconClassName} />
+          <a
+            className="font-primary text-xs hover:underline text-white"
+            href={`mailto:${MIX6IX_DETAILS.email}`}
+          >
+            {MIX6IX_DETAILS.email}
+          </a>
+        </div>
+      </div>
+    </div>
+  );
+};
+const Footer: React.FC<FooterProps> = ({ navigationLinks }) => {
   return (
     <div className="flex flex-col-reverse md:grid md:grid-cols-4 h-full mt-48">
       <div className="hidden md:inline-block">
         <LogoFooter />
       </div>
       <div className="hidden md:inline-block">
-        {/* <FooterMenu navigationLinks={navigationLinks} /> */}
+        <FooterMenu navigationLinks={navigationLinks} />
+      </div>
+      <div>
+        <Mix6ixContact />
+      </div>
+      <div>
+        <Mix6ixSocials />
       </div>
     </div>
   );

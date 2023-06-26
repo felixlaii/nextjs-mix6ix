@@ -44,7 +44,7 @@ export const ProjectLayout: React.FC<PropsWithChildren> = (
         activeLinkClassName="text-brand-lightest font-normal lg:text-lg font-light"
       />
       <Content>{children}</Content>
-      <Footer />
+      <Footer navigationLinks={navigationLinks} />
     </Wrapper>
   );
 };
