@@ -63,6 +63,12 @@ module.exports = {
           "-moz-box-shadow": "12px 29px 81px 0px rgba(0,0,0,0.75)",
           "box-shadow": "0 0 75px 75px rgba(0, 0, 0, 0.5)",
         },
+        ".br-about": {
+          "border-radius": "0px 0px 132px 132px ",
+        },
+        ".br-left": {
+          "border-radius": "78% 19% 46% 55% / 80% 27% 70% 17%  ",
+        },
       };
       addUtilities(utilities, ["response", "hover"]);
     }),
