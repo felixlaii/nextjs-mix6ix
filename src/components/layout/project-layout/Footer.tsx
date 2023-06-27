@@ -91,7 +91,7 @@ const Mix6ixContact = () => {
         <div className={divClassName}>
           <AiOutlineMail className={iconClassName} />
           <a
-            className="font-primary text-[.6em] hover:underline tracking-[.3em] text-zinc-300"
+            className="font-primary text-[.7em] hover:underline tracking-[.3em] text-zinc-300"
             href={`mailto:${MIX6IX_DETAILS.email}`}
           >
             {MIX6IX_DETAILS.email}
