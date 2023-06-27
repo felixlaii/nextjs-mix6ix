@@ -32,26 +32,12 @@ const FooterMenu: React.FC<Pick<FooterProps, "navigationLinks">> = ({
         <ul className="flex flex-row mx-auto text-md gap-y-2 font-light text-zinc-400 mt-4">
           {navigationLinks.map((link) => (
             <li
-              className="border rounded-full pr-5 pl-5 pt-2 pb-2 mx-5 font-primary text-[0.6em] tracking-widest"
+              className="border border-zinc-300 rounded-full pr-5 pl-5 pt-2 pb-2 mx-5 font-primary text-[0.6em] tracking-widest"
               key={link.name}
             >
-              {link.name !== "FORMS" ? (
-                <div className="hover:font-medium">
-                  <Link href={link.href}>
-                    {snakeCaseToTitleCase(link.name)}
-                  </Link>
-                </div>
-              ) : (
-                <ul className="flex flex-row gap-y-2">
-                  {link.dropdown?.map((drop) => (
-                    <li key={drop.name} className="hover:font-medium">
-                      <Link href={drop.href}>
-                        {snakeCaseToTitleCase(drop.name)}
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-              )}
+              <div className="hover:font-medium">
+                <Link href={link.href}>{snakeCaseToTitleCase(link.name)}</Link>
+              </div>
             </li>
           ))}
         </ul>
@@ -96,7 +82,7 @@ const Mix6ixContact = () => {
         <div className={divClassName}>
           <AiOutlinePhone className={iconClassName} />
           <a
-            className="hover:underline font-primary text-sm text-zinc-300 tracking-widest"
+            className="hover:underline font-primary text-[.7em] text-zinc-300 tracking-widest"
             href={`tel:${MIX6IX_DETAILS.phone}`}
           >
             {MIX6IX_DETAILS.phone}
@@ -105,7 +91,7 @@ const Mix6ixContact = () => {
         <div className={divClassName}>
           <AiOutlineMail className={iconClassName} />
           <a
-            className="font-primary text-xs hover:underline tracking-widest text-zinc-300"
+            className="font-primary text-[.6em] hover:underline tracking-[.3em] text-zinc-300"
             href={`mailto:${MIX6IX_DETAILS.email}`}
           >
             {MIX6IX_DETAILS.email}
