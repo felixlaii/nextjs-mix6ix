@@ -4,7 +4,7 @@ import { createRef, useState } from "react";
 import { AiFillStar, AiOutlineStar } from "react-icons/ai";
 
 const slideClassName =
-  "h-[32rem] md:h-80 xl:h-[20rem] max-w-3xl rounded-lg shadow-lg bg-gray-900";
+  "h-[32rem] md:h-80 xl:h-[20rem] max-w-3xl rounded-lg shadow-lg bg-black border border-brand-gold";
 
 const ClientReviews: React.FC = () => {
   const [currentSlide, setCurrentSlide] = useState<number>(0);
