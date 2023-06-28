@@ -57,9 +57,18 @@ module.exports = {
     require("@tailwindcss/line-clamp"),
     plugin(function ({ addUtilities }) {
       const utilities = {
+        ".zig-zag": {
+          mask: "conic-gradient(from -45deg at right,#000 90deg,#0000 0) 50% / 60px 100%",
+        },
         ".box-right": {
           "--mask":
-            "conic-gradient(from -160deg at right, transparent, white 1deg 139deg, transparent 140deg) 50%/100% 291.23px",
+            "linear-gradient(to bottom, transparent, transparent) 0 0/100% 100% content-box, conic-gradient(from -160deg at right, transparent, white 1deg 139deg, transparent 140deg) 50%/100% 291.23px",
+          "-webkit-mask": "var(--mask)",
+          mask: "var(--mask)",
+        },
+        ".box-left": {
+          "--mask":
+            "linear-gradient(to bottom, transparent, transparent) 0 0/100% 100% content-box, conic-gradient(from -160deg at left, transparent, white 1deg 139deg, transparent 140deg) 50%/100% 291.23px",
           "-webkit-mask": "var(--mask)",
           mask: "var(--mask)",
         },
