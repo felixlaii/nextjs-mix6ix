@@ -57,20 +57,23 @@ module.exports = {
     require("@tailwindcss/line-clamp"),
     plugin(function ({ addUtilities }) {
       const utilities = {
-        ".img-blur": {
-          "border-radius": "20px",
-          "-webkit-box-shadow": "12px 29px 81px 0px rgba(0,0,0,0.75)",
-          "-moz-box-shadow": "12px 29px 81px 0px rgba(0,0,0,0.75)",
-          "box-shadow": "0 0 75px 75px rgba(0, 0, 0, 0.5)",
+        ".zig-zag": {
+          mask: "conic-gradient(from -45deg at right,#000 90deg,#0000 0) 50% / 60px 100%",
         },
-        ".br-about": {
-          "border-radius": "0px 0px 132px 132px ",
+        ".box-right": {
+          "--mask":
+            "linear-gradient(to bottom, transparent, transparent) 0 0/100% 100% content-box, conic-gradient(from -160deg at right, transparent, white 1deg 139deg, transparent 140deg) 50%/100% 291.23px",
+          "-webkit-mask": "var(--mask)",
+          mask: "var(--mask)",
         },
-        ".br-left": {
-          "border-radius": "78% 19% 46% 55% / 80% 27% 70% 17%  ",
+        ".box-left": {
+          "--mask":
+            "linear-gradient(to bottom, transparent, transparent) 0 0/100% 100% content-box, conic-gradient(from -160deg at left, transparent, white 1deg 139deg, transparent 140deg) 50%/100% 291.23px",
+          "-webkit-mask": "var(--mask)",
+          mask: "var(--mask)",
         },
       };
-      addUtilities(utilities, ["response", "hover"]);
+      addUtilities(utilities, ["responsive", "hover"]);
     }),
 
     plugin(function ({ addBase }) {
