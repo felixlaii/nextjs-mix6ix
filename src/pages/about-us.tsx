@@ -15,10 +15,13 @@ const AboutUs: React.FC = () => {
             </span>
           </p>
           <img
-            className="w-1/2 opacity-80"
+            className="w-1/2 relative"
             src="https://res.cloudinary.com/dyjj9jfc2/image/upload/v1687909604/about-us_zkerh3.jpg"
             alt="aboutus"
           />
+          <span className="absolute inset-0 overflow-hidden">
+            <span className="absolute box-left w-full h-full bg-zinc-100 opacity-10"></span>
+          </span>
         </div>
       </div>
     </div>
