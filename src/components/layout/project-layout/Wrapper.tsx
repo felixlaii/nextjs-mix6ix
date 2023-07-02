@@ -6,7 +6,11 @@ import { PropsWithChildren } from "react";
 export const Wrapper: React.FC<PropsWithChildren<{}>> = ({ children }) => {
   return (
     <>
-      <div className="min-h-screen overflow-hidden overflow-x-hidden bg-cover bg-center bg-[url('https://res.cloudinary.com/dyjj9jfc2/image/upload/v1687550759/marek-piwnicki-yohdiGFAHrc-unsplash_msoypx.jpg')]">
+      <div
+        className="min-h-screen overflow-hidden overflow-x-hidden 
+      bg-cover bg-center bg-[url('https://res.cloudinary.com/dyjj9jfc2/image/upload/v1687550759/marek-piwnicki-yohdiGFAHrc-unsplash_msoypx.jpg')]
+      "
+      >
         {children}
       </div>
     </>
