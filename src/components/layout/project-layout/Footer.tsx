@@ -108,15 +108,6 @@ const Footer: React.FC<FooterProps> = ({ navigationLinks }) => {
         <div className="hidden md:inline-block">
           <LogoFooter />
         </div>
-        {/* <div className="flex flex-col justify-center w-1/2">
-          <p className="font-primary text-xs text-white">
-            Passionate hospitality professionals specializing in crafting
-            memorable cocktail experiences. We offer exclusive, personalized
-            services, embodying a culture of craftsmanship. From intimate
-            gatherings to grand celebrations, we are the trusted bartending
-            company in the Greater Toronto Area.
-          </p>
-        </div> */}
         <div>
           <Mix6ixContact />
         </div>
