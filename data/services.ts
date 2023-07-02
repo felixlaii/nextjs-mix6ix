@@ -25,7 +25,6 @@ export const MIX_SERVICES: {
     description:
       "Experience our Mixology Workshop: team building, private gatherings, and interactive cocktail-making. Unleash creativity and have fun!",
   },
-
   {
     service: "Private Bartending Class",
     id: "bartender-packages",
@@ -33,7 +32,6 @@ export const MIX_SERVICES: {
     description:
       "Unlock the art of bartending through personalized training sessions. From beginner to expert, elevate your skills and confidence. Become a pro mixologist with us!",
   },
-
   {
     service: "Custom Bar Menus",
     id: "bartender-packages",
@@ -41,7 +39,6 @@ export const MIX_SERVICES: {
     description:
       "Custom foiled bar menus designed by Blush & Letters co. to personalize and complete your unique experience. ",
   },
-
   {
     service: "Servers/Support Staff",
     id: "bartender-packages",
@@ -49,7 +46,6 @@ export const MIX_SERVICES: {
     description:
       "Enhance your party with our professional servers and support staff. Experienced and interactive, they ensure a seamless event.",
   },
-
   {
     service: "Premium Cocktail Kits",
     id: "bartender-packages",
