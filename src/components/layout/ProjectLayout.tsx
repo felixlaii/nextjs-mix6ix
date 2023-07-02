@@ -45,7 +45,7 @@ export const ProjectLayout: React.FC<PropsWithChildren> = (
       />
 
       <Content>{children}</Content>
-      <ScrollAnimation />
+      {/* <ScrollAnimation /> */}
       <Footer navigationLinks={navigationLinks} />
     </Wrapper>
   );

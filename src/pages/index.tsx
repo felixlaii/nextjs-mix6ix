@@ -4,14 +4,14 @@ import ScrollAnimation from "@/components/ScrollAnimation";
 const Home: React.FC = () => {
   return (
     <div className="relative">
-      {/* <Hero /> */}
+      <Hero />
 
-      {/* <div className="h-screen flex flex-col justify-center items-center">
+      <div className="h-screen flex flex-col justify-center items-center">
         <h1 className="font-primary text-center font-medium text-3xl xl:text-4xl mt-14 md:mt-24 tracking-widest text-zinc-400">
           Reviews
         </h1>
         <ClientReviews />
-      </div> */}
+      </div>
     </div>
   );
 };
