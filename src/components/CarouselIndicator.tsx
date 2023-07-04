@@ -10,7 +10,7 @@ export interface CarouselIndicatorProps {
 export default function CarouselIndicator({
   activeIndex,
   length,
-  maxIndicatorVisible = 5,
+  maxIndicatorVisible = 7,
   onSetActiveIndex,
 }: CarouselIndicatorProps) {
   const maxIndicator =

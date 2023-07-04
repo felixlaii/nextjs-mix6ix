@@ -1,6 +1,7 @@
 import React from "react";
 import Carousel from "../components/Carousel";
 import Image from "next/image";
+import PageHeading from "@/components/ui/PageHeading";
 
 const images = [
   "https://res.cloudinary.com/dyjj9jfc2/image/upload/v1687031905/drinks-image-01_vkxvvb.jpg",
@@ -13,7 +14,7 @@ const images = [
   "https://res.cloudinary.com/dyjj9jfc2/image/upload/v1687031903/drinks-image-06_kfqotc.jpg",
   "https://res.cloudinary.com/dyjj9jfc2/image/upload/v1687031903/drinks-image-07_zqmuc3.jpg",
 ];
-const imageClassName = "h-[50rem] w-full object-cover";
+const imageClassName = "h-[50rem] w-full object-contain";
 const imagesItems = [
   <Image
     className={imageClassName}
@@ -82,8 +83,11 @@ const imagesItems = [
 
 const Photos = () => {
   return (
-    <div className="mt-[20rem] mb-[20rem]">
-      <main className="flex flex-col items-center justify-center text-center">
+    <div className="mb-[20rem]">
+      <div className="relative sm:pt-0 h-[12rem] md:h-[16rem]">
+        <PageHeading title="Photo Gallery" />
+      </div>
+      <main className="mt-[5rem] flex flex-col items-center justify-center text-center">
         <Carousel items={imagesItems} />
       </main>
     </div>
