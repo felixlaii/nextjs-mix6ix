@@ -16,7 +16,7 @@ export const images = [
 ];
 
 const photoClassName =
-  "h-[25rem] md:h-[29rem] xl:h-[30rem] max-w-3xl rounded-lg shadow-lg";
+  "h-[45rem] md:h-[50-rem] xl:h-[55rem] rounded-lg shadow-lg";
 
 const Photos: React.FC = () => {
   const [currentImage, setCurrentImage] = useState<number>(0);
@@ -104,7 +104,7 @@ const Photos: React.FC = () => {
               >
                 <img
                   src={img}
-                  className={clsx("object-cover w-full h-full", photoClassName)}
+                  className={clsx("object-contain w-full", photoClassName)}
                   alt="Our Practice"
                 />
               </div>
