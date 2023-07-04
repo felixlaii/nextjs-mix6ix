@@ -1,6 +1,6 @@
 import Hero from "@/components/Hero";
 import ClientReviews from "@/components/ClientReviews";
-import ScrollAnimation from "@/components/ScrollAnimation";
+
 const Home: React.FC = () => {
   return (
     <div className="relative">
