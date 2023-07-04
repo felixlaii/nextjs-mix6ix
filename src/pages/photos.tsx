@@ -54,28 +54,28 @@ const imagesItems = [
   <Image
     className={imageClassName}
     src={images[5]}
-    alt="Image 5"
+    alt="Image 6"
     width={1100}
     height={900}
   />,
   <Image
     className={imageClassName}
     src={images[6]}
-    alt="Image 5"
+    alt="Image 7"
     width={1100}
     height={900}
   />,
   <Image
     className={imageClassName}
     src={images[7]}
-    alt="Image 5"
+    alt="Image 8"
     width={1100}
     height={900}
   />,
   <Image
     className={imageClassName}
     src={images[8]}
-    alt="Image 5"
+    alt="Image 9"
     width={1100}
     height={900}
   />,
