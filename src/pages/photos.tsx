@@ -112,9 +112,9 @@ const Photos: React.FC = () => {
             {sliderControl()}
           </div>
         </div>
-        <div className="mt-8 max-w-3xl">
+        {/* <div className="mt-8 max-w-3xl">
           <ImageGrid />
-        </div>
+        </div> */}
       </div>
     </>
   );
