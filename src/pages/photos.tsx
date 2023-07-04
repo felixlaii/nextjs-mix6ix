@@ -1,9 +1,8 @@
-import ImageGrid from "@/components/ImageGrid";
-import clsx from "clsx";
-import { createRef, useState } from "react";
-import PageHeading from "@/components/ui/PageHeading";
+import React from "react";
+import Carousel from "../components/Carousel";
+import Image from "next/image";
 
-export const images = [
+const images = [
   "https://res.cloudinary.com/dyjj9jfc2/image/upload/v1687031905/drinks-image-01_vkxvvb.jpg",
   "https://res.cloudinary.com/dyjj9jfc2/image/upload/v1687031907/drinks-image-09_rtjuiq.jpg",
   "https://res.cloudinary.com/dyjj9jfc2/image/upload/v1687031904/drinks-image-04_smj88a.jpg",
@@ -14,109 +13,80 @@ export const images = [
   "https://res.cloudinary.com/dyjj9jfc2/image/upload/v1687031903/drinks-image-06_kfqotc.jpg",
   "https://res.cloudinary.com/dyjj9jfc2/image/upload/v1687031903/drinks-image-07_zqmuc3.jpg",
 ];
+const imageClassName = "h-[50rem] w-full object-cover";
+const imagesItems = [
+  <Image
+    className={imageClassName}
+    src={images[0]}
+    alt="Image 1"
+    width={1100}
+    height={900}
+  />,
+  <Image
+    className={imageClassName}
+    src={images[1]}
+    alt="Image 2"
+    width={1100}
+    height={900}
+  />,
+  <Image
+    className={imageClassName}
+    src={images[2]}
+    alt="Image 3"
+    width={1100}
+    height={900}
+  />,
+  <Image
+    className={imageClassName}
+    src={images[3]}
+    alt="Image 4"
+    width={1100}
+    height={900}
+  />,
+  <Image
+    className={imageClassName}
+    src={images[4]}
+    alt="Image 5"
+    width={1100}
+    height={900}
+  />,
+  <Image
+    className={imageClassName}
+    src={images[5]}
+    alt="Image 5"
+    width={1100}
+    height={900}
+  />,
+  <Image
+    className={imageClassName}
+    src={images[6]}
+    alt="Image 5"
+    width={1100}
+    height={900}
+  />,
+  <Image
+    className={imageClassName}
+    src={images[7]}
+    alt="Image 5"
+    width={1100}
+    height={900}
+  />,
+  <Image
+    className={imageClassName}
+    src={images[8]}
+    alt="Image 5"
+    width={1100}
+    height={900}
+  />,
+];
 
-const photoClassName =
-  "h-[45rem] md:h-[50-rem] xl:h-[55rem] rounded-lg shadow-lg";
-
-const Photos: React.FC = () => {
-  const [currentImage, setCurrentImage] = useState<number>(0);
-
-  const refs = images.reduce((acc: any, val, i) => {
-    acc[i] = createRef();
-    return acc;
-  }, {});
-
-  const scrollToImage = (i: number) => {
-    // Set the index of the image we want to see next
-    setCurrentImage(i);
-    refs[i].current.scrollIntoView({
-      //     Defines the transition animation.
-      behavior: "smooth",
-      //      Defines vertical alignment.
-      block: "nearest",
-      //      Defines horizontal alignment.
-      inline: "start",
-    });
-  };
-
-  const totalImages = images.length;
-
-  // Below functions will assure that after last image we'll scroll back to the start,
-  // or another way round - first to last in previousImage method.
-  const nextImage = () => {
-    if (currentImage >= totalImages - 1) {
-      scrollToImage(0);
-    } else {
-      scrollToImage(currentImage + 1);
-    }
-  };
-
-  const previousImage = () => {
-    if (currentImage === 0) {
-      scrollToImage(totalImages - 1);
-    } else {
-      scrollToImage(currentImage - 1);
-    }
-  };
-
-  // Tailwind styles. Most importantly notice position absolute, this will sit relative to the carousel's outer div.
-  const arrowStyle =
-    "absolute text-white text-2xl z-10 bg-black h-10 w-10 rounded-full opacity-75 flex items-center justify-center";
-
-  const sliderControl = (isLeftButton?: boolean) => (
-    <button
-      type="button"
-      onClick={isLeftButton ? previousImage : nextImage}
-      className={`${arrowStyle} ${isLeftButton ? "left-2" : "right-2"}`}
-      style={{ top: "45%" }}
-    >
-      <span role="img" aria-label={`Arrow ${isLeftButton ? "left" : "right"}`}>
-        {isLeftButton ? "◀" : "▶"}
-      </span>
-    </button>
-  );
-
+const Photos = () => {
   return (
-    <>
-      <div className="relative pt-10 sm:pt-0 h-[12rem] md:h-[16rem]">
-        <PageHeading title="Photo Gallery" />
-      </div>
-      <div
-        className={clsx(
-          "flex flex-col justify-center items-center w-[calc(10% - 10px)] mx-5 lg:mx-auto pb-8"
-        )}
-      >
-        {/* <div className="relative pt-5 sm:pt-0 h-[14rem] md:h-[18rem]"></div> */}
-        <div className={clsx("relative mt-12", photoClassName)}>
-          <div
-            className={clsx(
-              "flex overflow-x-hidden snap-mandatory snap-x",
-              photoClassName
-            )}
-          >
-            {sliderControl(true)}
-            {images.map((img, i) => (
-              <div
-                className="w-full flex-shrink-0"
-                key={`${img} - ${i}`}
-                ref={refs[i]}
-                id={i.toString()}
-              >
-                <img
-                  src={img}
-                  className={clsx("object-contain w-full", photoClassName)}
-                  alt="Our Practice"
-                />
-              </div>
-            ))}
-            {sliderControl()}
-          </div>
-        </div>
-        {/* <div className="mt-8 max-w-3xl">
-          <ImageGrid />
-        </div> */}
-      </div>
-    </>
+    <div className="mt-[20rem] mb-[20rem]">
+      <main className="flex flex-col items-center justify-center text-center">
+        <Carousel items={imagesItems} />
+      </main>
+    </div>
   );
 };
 
