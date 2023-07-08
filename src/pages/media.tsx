@@ -1,22 +1,19 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { VideoData } from "../../data/media";
 import PageHeading from "@/components/ui/PageHeading";
+import Modal from "@/components/ui/Modal";
 
 const Media: React.FC = () => {
-  const [selectedVideo, setSelectedVideo] = useState(VideoData[0]);
-  const [otherVideos, setOtherVideos] = useState(
-    VideoData.filter((video) => video.id !== selectedVideo.id)
+  const [currentVideoIndex, setCurrentVideoIndex] = useState<number | null>(
+    null
   );
+  const [isVideoPlayerOpen, setIsVideoPlayerOpen] = useState(false);
 
-  const handleVideoSelect = (video: (typeof VideoData)[number]) => {
-    setSelectedVideo(video);
-    setOtherVideos(VideoData.filter((v) => v.id !== video.id));
+  const selectVideoByIndex = (index: number) => {
+    setCurrentVideoIndex(index);
+    setIsVideoPlayerOpen(true);
+    window.scrollTo({ left: 0, top: 0, behavior: "smooth" });
   };
-
-  useEffect(() => {
-    setSelectedVideo(VideoData[0]);
-    setOtherVideos(VideoData.slice(1));
-  }, []);
 
   return (
     <>
@@ -24,32 +21,40 @@ const Media: React.FC = () => {
         <PageHeading title="Video Gallery" />
       </div>
       <div className="flex">
-        <div className=" mt-[8rem] ml-40">
-          <video
-            className="h-[50rem] w-[100rem] border border-gray-700 dark:border-gray-700"
-            controls
-            preload="auto"
-            src={selectedVideo.videoSrc}
-          />
+        <div className="mt-[8rem] ml-40">
+          <Modal
+            open={isVideoPlayerOpen}
+            onClose={() => setIsVideoPlayerOpen(false)}
+          >
+            {currentVideoIndex !== null && (
+              <video
+                className="h-[50rem] w-[100rem] bg-black"
+                controls
+                preload="auto"
+                style={{ background: "black" }}
+              >
+                <source src={VideoData[currentVideoIndex].videoSrc} />
+              </video>
+            )}
+          </Modal>
         </div>
 
         <div className="mt-[7rem] mr-40 w-full h-full flex flex-col items-center justify-center">
-          <h1 className="text-white text-lg text-shadow-lg shadow-zinc-300">
-            Other Videos
-          </h1>
-
-          <div className="overflow-y-auto">
-            <ul className="w-80 h-[48rem]">
-              {otherVideos.map((video) => (
+          <div className="overflow-none">
+            <ul className="grid grid-cols-3 gap-4">
+              {VideoData.map((video, index) => (
                 <li
-                  className="m-5"
+                  className="m-5 cursor-pointer"
                   key={video.id}
-                  onClick={() => handleVideoSelect(video)}
+                  onClick={() => selectVideoByIndex(index)}
                 >
-                  <video
-                    className="w-64 h-48 border border-gray-700  dark:border-gray-700 object-cover object-top"
-                    src={video.videoSrc}
-                  />
+                  <div className="w-64 h-48 object-cover object-top">
+                    <img
+                      src={video.thumbnail}
+                      alt="video"
+                      className="w-full h-full object-center object-cover rounded-md opacity-75"
+                    />
+                  </div>
                 </li>
               ))}
             </ul>
