@@ -52,7 +52,7 @@ const Media: React.FC = () => {
                     <img
                       src={video.thumbnail}
                       alt="video"
-                      className="w-full h-full object-center object-cover rounded-md opacity-75"
+                      className="w-full h-full object-center object-cover rounded-md opacity-75 shadow-md shadow-zinc-300"
                     />
                   </div>
                 </li>
