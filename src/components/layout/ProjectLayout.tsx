@@ -8,7 +8,7 @@ import { GALLERY_DROPDOWN } from "../../../data/photo-data";
 import { NavigationLink } from "@/types/component-types";
 import logo from "../../../public/images/MIX6IX2022.png";
 import clsx from "clsx";
-import ScrollAnimation from "../ScrollAnimation";
+import { AnimatePresence, motion } from "framer-motion";
 /**
  * Responsive web UI layout for RheumInfo.
  * Includes a header with responsive navigation menu and a footer.
@@ -28,8 +28,20 @@ export const ProjectLayout: React.FC<PropsWithChildren> = (
     { name: "GALLERY", href: "#", dropdown: GALLERY_DROPDOWN },
     { name: "CONTACT US", href: "/contact-us" },
   ];
-
+  const collapseVariants = {
+    initial: { scaleY: 1 },
+    animate: { scaleY: 0 },
+  };
   return (
+    // <AnimatePresence>
+    //   <motion.div
+    //     key={location.pathname}
+    //     initial="initial"
+    //     animate="animate"
+    //     exit="initial"
+    //     variants={collapseVariants}
+    //     transition={{ duration: 0.5 }}
+    //   >
     <Wrapper>
       <Header
         logo={logo.src}
@@ -45,8 +57,9 @@ export const ProjectLayout: React.FC<PropsWithChildren> = (
       />
 
       <Content>{children}</Content>
-      {/* <ScrollAnimation /> */}
       <Footer navigationLinks={navigationLinks} />
     </Wrapper>
+    //   </motion.div>
+    // </AnimatePresence>
   );
 };
