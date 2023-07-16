@@ -9,6 +9,7 @@ export interface NavigationLink {
   name: string;
   href: string;
   dropdown?: DropdownLink[];
+  src: string;
 }
 
 export interface DropdownLink {
