@@ -9,6 +9,7 @@ import { NavigationLink } from "@/types/component-types";
 import logo from "../../../public/images/MIX6IX2022.png";
 import clsx from "clsx";
 import ScrollAnimation from "../ScrollAnimation";
+import HeaderBar from "./project-layout/HeaderBar";
 /**
  * Responsive web UI layout for RheumInfo.
  * Includes a header with responsive navigation menu and a footer.
@@ -19,19 +20,26 @@ export const ProjectLayout: React.FC<PropsWithChildren> = (
 ) => {
   const location = useRouter();
   const navigationLinks: Array<NavigationLink> = [
-    { name: "ABOUT US", href: "/about-us" },
+    { name: "ABOUT US", href: "/about-us", src: "header1.JPG" },
     {
       name: "SERVICES",
       href: "/services",
+      src: "header2.JPG",
     },
-    { name: "SHOP", href: "/shop" },
-    { name: "GALLERY", href: "#", dropdown: GALLERY_DROPDOWN },
-    { name: "CONTACT US", href: "/contact-us" },
+    { name: "SHOP", href: "/shop", src: "header3.JPG" },
+    {
+      name: "GALLERY",
+      href: "#",
+      dropdown: GALLERY_DROPDOWN,
+      src: "header4.JPG",
+    },
+    { name: "CONTACT US", href: "/contact-us", src: "header5.JPG" },
   ];
 
   return (
     <Wrapper>
-      <Header
+      <HeaderBar />
+      {/* <Header
         logo={logo.src}
         navigationLinks={navigationLinks}
         currentActiveLocation={location.pathname}
@@ -42,10 +50,9 @@ export const ProjectLayout: React.FC<PropsWithChildren> = (
           "flex bg-left-bottom hover:text-brand-lightest bg-gradient-to-r from-brand-lightest/40 to-brand-darkest bg-[length:0%_2px] bg-no-repeat group-hover:bg-[length:100%_2px] transition-all duration-500 ease-out"
         )}
         activeLinkClassName="text-brand-lightest font-normal lg:text-lg font-light"
-      />
+      /> */}
 
       <Content>{children}</Content>
-      {/* <ScrollAnimation /> */}
       <Footer navigationLinks={navigationLinks} />
     </Wrapper>
   );
