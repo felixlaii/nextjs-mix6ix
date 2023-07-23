@@ -64,7 +64,7 @@ export const blur = {
   },
 };
 
-interface TranslateAnimation {
+export interface TranslateAnimation {
   y: string | number;
   opacity: number;
   transition: {
