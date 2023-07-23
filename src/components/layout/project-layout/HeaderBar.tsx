@@ -20,11 +20,9 @@ interface BodyProps {
   setSelectedLink: React.Dispatch<React.SetStateAction<SelectedLinkState>>;
 }
 
-export default function Body({
-  links,
-  selectedLink,
-  setSelectedLink,
-}: BodyProps) {
+const Body: React.FC<
+  Pick<BodyProps, "links" | "selectedLink" | "setSelectedLink">
+> = ({ links, selectedLink, setSelectedLink }) => {
   const getChars = (word: string) => {
     let chars: JSX.Element[] = [];
     word.split("").forEach((char, i) => {
@@ -43,7 +41,6 @@ export default function Body({
     });
     return chars;
   };
-
   return (
     <div className={styles.body}>
       {links.map((link, index) => {
@@ -71,17 +68,17 @@ export default function Body({
       })}
     </div>
   );
-}
+};
 
-export default function Image({ src, isActive }) {
-  return (
-    <motion.div
-      variants={opacity}
-      initial="initial"
-      animate={isActive ? "open" : "closed"}
-      className={styles.imageContainer}
-    >
-      <Image src={`/images/nav-images/${src}`} fill={true} alt="image" />
-    </motion.div>
-  );
-}
+// const Image: React.FC({ src, isActive }) {
+//   return (
+//     <motion.div
+//       variants={opacity}
+//       initial="initial"
+//       animate={isActive ? "open" : "closed"}
+//       className={styles.imageContainer}
+//     >
+//       <Image src={`/images/nav-images/${src}`} fill={true} alt="image" />
+//     </motion.div>
+//   );
+// }
