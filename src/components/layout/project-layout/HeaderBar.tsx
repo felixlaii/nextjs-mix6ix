@@ -20,6 +20,11 @@ interface BodyProps {
   setSelectedLink: React.Dispatch<React.SetStateAction<SelectedLinkState>>;
 }
 
+interface ImageComponentProps {
+  src: string;
+  isActive: boolean;
+}
+
 const Body: React.FC<
   Pick<BodyProps, "links" | "selectedLink" | "setSelectedLink">
 > = ({ links, selectedLink, setSelectedLink }) => {
@@ -70,15 +75,23 @@ const Body: React.FC<
   );
 };
 
-// const Image: React.FC({ src, isActive }) {
-//   return (
-//     <motion.div
-//       variants={opacity}
-//       initial="initial"
-//       animate={isActive ? "open" : "closed"}
-//       className={styles.imageContainer}
-//     >
-//       <Image src={`/images/nav-images/${src}`} fill={true} alt="image" />
-//     </motion.div>
-//   );
-// }
+const ImageComponent: React.FC<
+  Pick<ImageComponentProps, "src" | "isActive">
+> = ({ src, isActive }) => {
+  return (
+    <motion.div
+      variants={opacity}
+      initial="initial"
+      animate={isActive ? "open" : "closed"}
+    >
+      <div style={{ position: "relative", width: "100%", height: "100%" }}>
+        <Image
+          src={`/images/${src}`}
+          layout="fill"
+          objectFit="cover"
+          alt="image"
+        />
+      </div>
+    </motion.div>
+  );
+};
