@@ -8,8 +8,9 @@ import { GALLERY_DROPDOWN } from "../../../data/photo-data";
 import { NavigationLink } from "@/types/component-types";
 import logo from "../../../public/images/MIX6IX2022.png";
 import clsx from "clsx";
-import ScrollAnimation from "../ScrollAnimation";
 import HeaderBar from "./project-layout/HeaderBar";
+import React, { useState } from "react";
+import { motion } from "framer-motion";
 /**
  * Responsive web UI layout for RheumInfo.
  * Includes a header with responsive navigation menu and a footer.
@@ -18,6 +19,11 @@ export const ProjectLayout: React.FC<PropsWithChildren> = (
   { children },
   props
 ) => {
+  const [selectedLink, setSelectedLink] = useState({
+    isActive: false,
+    index: 0,
+  });
+
   const location = useRouter();
   const navigationLinks: Array<NavigationLink> = [
     { name: "ABOUT US", href: "/about-us", src: "header1.JPG" },
@@ -38,7 +44,13 @@ export const ProjectLayout: React.FC<PropsWithChildren> = (
 
   return (
     <Wrapper>
-      <HeaderBar />
+      <HeaderBar
+        navigationLinks={navigationLinks}
+        currentActiveLocation={location.pathname}
+        // linkClassName="your-link-class"
+        // hoverClassName="your-hover-class"
+        // activeLinkClassName="your-active-class"
+      />
       {/* <Header
         logo={logo.src}
         navigationLinks={navigationLinks}
