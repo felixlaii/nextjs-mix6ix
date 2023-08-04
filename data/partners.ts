@@ -7,39 +7,39 @@ export const PartnerInfo: {
     image: "",
   },
   {
-    company: "CIBC",
+    company: "Snapchat",
     image: "",
   },
   {
-    company: "Mother",
+    company: "Moon Soju",
     image: "",
   },
   {
-    company: "HSBC",
+    company: "Burger Mania",
     image: "",
   },
   {
-    company: "Jollibee",
+    company: "Valmont",
     image: "",
   },
   {
-    company: "",
+    company: "Chef De La Mesa",
     image: "",
   },
   {
-    company: "",
+    company: "Backstage",
     image: "",
   },
   {
-    company: "",
+    company: "Cityline",
     image: "",
   },
   {
-    company: "",
+    company: "Rebecca Chan",
     image: "",
   },
   {
-    company: "",
+    company: "Chronic Ink",
     image: "",
   },
 ];
