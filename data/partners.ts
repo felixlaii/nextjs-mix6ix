@@ -3,23 +3,23 @@ export const PartnerInfo: {
   image: string;
 }[] = [
   {
-    company: "",
+    company: "Holt Renfrew",
     image: "",
   },
   {
-    company: "",
+    company: "CIBC",
     image: "",
   },
   {
-    company: "",
+    company: "Mother",
     image: "",
   },
   {
-    company: "",
+    company: "HSBC",
     image: "",
   },
   {
-    company: "",
+    company: "Jollibee",
     image: "",
   },
   {
